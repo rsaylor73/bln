@@ -1,0 +1,106 @@
+body
+{
+}
+
+th, td {
+    padding: 5px;
+}
+
+#header {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   height: 100px;
+   background: #17598B;
+}
+
+#logo {
+   position: absolute;
+   top: 20px;
+   left: 150px;
+}
+
+#nav {
+   position: absolute;
+   top: 30px;
+   left: 600px;
+}
+
+#questionbox {
+   position: absolute;
+   top: 150px;
+   left: 150px;
+   height: 450px;
+   width: 80%;
+   background: #FFFFFF;
+}
+
+#adminquestionbox {
+   position: absolute;
+   top: 150px;
+   left: 150px;
+   height: 550px;
+   width: 80%;
+   background: #FFFFFF;
+}
+
+#questionbox_inner {
+   position: absolute;
+   top: 20px;
+   left: 20px;
+}
+
+.dot_header {
+   font: 26px Verdana;
+   color: #FFFFFF;
+
+}
+
+.boldText {
+   font: 26px Verdana;
+   color: #2E5C9E;
+
+}
+
+.normalText {
+   font: 16px Verdana;
+   color: #000000;
+}
+
+.redText {
+	font: 17px Verdana;
+	color: #CB4E2D;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -ms-animation: spin .7s infinite linear;
+    -webkit-animation: spinw .7s infinite linear;
+    -moz-animation: spinm .7s infinite linear;
+}
+ 
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+  
+@-webkit-keyframes spinw {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+ 
+@-moz-keyframes spinm {
+    from { -moz-transform: rotate(0deg);}
+    to { -moz-transform: rotate(360deg);}
+}
+
+#container {
+    display: block; 
+    position:relative;
+    left: 19%;
+} 
+.ui-autocomplete {
+    position: absolute !important;
+}
+
