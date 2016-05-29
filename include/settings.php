@@ -1,7 +1,7 @@
 <?php
 
 //$GLOBAL['path'] = "/home/blneng5/www/dot";
-$GLOBAL['path'] = "/home/bln/www";
+$GLOBAL['path'] = "/home/bln/www/bln";
 
 // email headers - This is fine tuned, please do not modify
 $sitename = "TBD";
