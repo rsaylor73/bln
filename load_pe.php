@@ -56,6 +56,7 @@ if ($_SESSION['pt'] == "k4do3wxjt") {
 
 		if ($found == "1") {
 			print "<br>Loading...<br>";
+			$_SESSION['ProjectID'] = $ProjectID;
 			?>
 			<script>
 				document.location.href='index.php?action=pe&type=load&ProjectID=<?=$ProjectID;?>';
