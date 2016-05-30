@@ -47,11 +47,13 @@ if ($_SESSION['tab1_read'] == "checked") {
 		$smarty->assign('show_form','Yes');
 	}
 
+	/*
 	if ($_SESSION['ProjectID'] != "") {
 		$_GET['type'] = "load";
 		$_GET['ProjectID'] = $_SESSION['ProjectID'];
 	}
-
+	*/
+	
 	if ($_GET['type'] == "load") {
                         $sql2 = "
                         SELECT

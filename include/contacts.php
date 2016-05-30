@@ -24,6 +24,10 @@ if ($_SESSION['tab2_read'] == "checked") {
 	if ($_POST['type'] != "") {
 		$type = $_POST['type'];
 	}
+
+
+
+
 	if ($_GET['ProjectID'] != "") {
 		$ProjectID = $_GET['ProjectID'];
 	}

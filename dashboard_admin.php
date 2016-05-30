@@ -54,22 +54,22 @@ if ($temp != "") {
 
 	if ($found_state == "1") {
 		if ($read1 == "ok") {
-			print "<td><b><a href=\"index.php?action=pe\">Project Entry</a></b></td>";
+			print "<td><b><a href=\"index.php?action=pe&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
 		}
         	if ($read3 == "ok") {
-	                print "<td><b><a href=\"index.php?action=contacts\">Contacts</a></b></td>";
+	                print "<td><b><a href=\"index.php?action=contacts&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
         	}
 		if ($read2 == "ok") {
-			print "<td><b><a href=\"index.php?action=milestones\">Milestones</a></b></td>";
+			print "<td><b><a href=\"index.php?action=milestones&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
 		}
 		if ($read4 == "ok") {
-			print "<td><b><a href=\"index.php?action=deficiencies\">Design Deficiencies</a></b></td>";
+			print "<td><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></td>";
 		}
 		if ($read5 == "ok") {
-			print "<td><b><a href=\"index.php?action=ratings\">Ratings</a></b>";
+			print "<td><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b>";
 		}
 
-		print "<td width=20%><b><a href=\"index.php?action=constructability\">Constructability</a></b></td>";
+		print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
 		print "<td width=20%><b>Tab 7 TBD</b></td>";
 
 	} else {
