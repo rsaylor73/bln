@@ -31,6 +31,13 @@ if ($_SESSION['tab3_read'] == "checked") {
 		$ProjectID = $_POST['ProjectID'];
 	}
 
+	$SubmittalTypes = "<option value=\"\">--Select--</option>";
+	$sql = "SELECT * FROM `SubmittalTypes` ORDER BY `id` ASC";
+	$result = $admin->new_mysql($sql);
+	while ($row = $result->fetch_assoc()) {
+		$SubmittalTypes .= "<option value=\"$row[id]\">$row[Description]</option>";
+	}
+	$smarty->assign('SubmittalTypes',$SubmittalTypes);
 
 	switch ($type) {
 		case "load":
