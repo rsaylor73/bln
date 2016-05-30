@@ -54,7 +54,10 @@ if ($temp != "") {
 
 	if ($found_state == "1") {
 		if ($read1 == "ok") {
-			print "<td><b><a href=\"index.php?action=pe&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
+			if ($_SESSION['ProjectID'] != "") {
+				$type_load = "&type=load";
+			}
+			print "<td><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
 		}
         	if ($read3 == "ok") {
 	                print "<td><b><a href=\"index.php?action=contacts&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
