@@ -30,7 +30,8 @@ if ($_SESSION['tab3_read'] == "checked") {
 	if ($_POST['ProjectID'] != "") {
 		$ProjectID = $_POST['ProjectID'];
 	}
-
+	$smarty->assign('ProjectID',$ProjectID);
+	
 	// Insert new data
     if (($write == "Yes") && ($_POST['section'] == "new")) {
     	$sql = "INSERT INTO `Milestones` (`ProjectID`,`SubmittalTypeID`,`TargetDate`,`DateIn`,`TargetDateOut`,`DateOut`,`organization`,`contact_person`,`Comments`) VALUES

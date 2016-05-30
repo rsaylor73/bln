@@ -1,5 +1,6 @@
 <form name="myform" action="index.php" method="post">
 <input type="hidden" name="action" value="milestones">
+<input type="hidden" name="ProjectID" value="{$ProjectID}">
 
 <br>
 
