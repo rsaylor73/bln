@@ -45,7 +45,7 @@ if ($_SESSION['tab3_read'] == "checked") {
 	$organizations = "<option value=\"\">--Select--</option>";
 	$result = $admin->new_mysql($sql);
 	while ($row = $result->fetch_assoc()) {
-		$organizations .= "<option>$row[DesignConsultantContact]</option>";
+		$organizations .= "<option>$row[DesignConsultant]</option>";
 	}
 	$smarty->assign('organizations',$organizations);
 
