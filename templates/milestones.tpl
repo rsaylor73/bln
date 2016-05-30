@@ -59,10 +59,11 @@
 
 {if $new eq "Yes"}
 	<tr><td colspan="2"><input type="submit" value="Save" class="btn btn-primary"></td></tr>
-}
+{/if}
+
 {if $new ne "Yes"}
 	<tr><td colspan="2"><input type="submit" value="Update" class="btn btn-primary"></td></tr>
-}
+{/if}
 
 </table>
 
