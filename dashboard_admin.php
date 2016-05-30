@@ -53,15 +53,15 @@ if ($temp != "") {
 
 
 	if ($found_state == "1") {
+		if ($_SESSION['ProjectID'] != "") {
+			$type_load = "&type=load";
+		}
 		if ($read1 == "ok") {
-			if ($_SESSION['ProjectID'] != "") {
-				$type_load = "&type=load";
-			}
 			print "<td><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
 		}
-        	if ($read3 == "ok") {
-	                print "<td><b><a href=\"index.php?action=contacts&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
-        	}
+       	if ($read3 == "ok") {
+            print "<td><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
+       	}
 		if ($read2 == "ok") {
 			print "<td><b><a href=\"index.php?action=milestones&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
 		}
