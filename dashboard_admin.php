@@ -63,7 +63,7 @@ if ($temp != "") {
             print "<td><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
        	}
 		if ($read2 == "ok") {
-			print "<td><b><a href=\"index.php?action=milestones&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
+			print "<td><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
 		}
 		if ($read4 == "ok") {
 			print "<td><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></td>";

@@ -40,6 +40,11 @@ if ($_SESSION['tab3_read'] == "checked") {
 			}
 			$smarty->assign('ProjectID',$ProjectID);
 		break;
+
+		default:
+			$smarty->assign('show_form','Yes');
+			$smarty->assign('new','Yes');
+		break;
 	}
 
         $smarty->display('milestones.tpl');
