@@ -31,6 +31,7 @@ if ($_SESSION['tab3_read'] == "checked") {
 		$ProjectID = $_POST['ProjectID'];
 	}
 
+	// Submittal Types
 	$SubmittalTypes = "<option value=\"\">--Select--</option>";
 	$sql = "SELECT * FROM `SubmittalTypes` ORDER BY `id` ASC";
 	$result = $admin->new_mysql($sql);
@@ -38,6 +39,24 @@ if ($_SESSION['tab3_read'] == "checked") {
 		$SubmittalTypes .= "<option value=\"$row[id]\">$row[Description]</option>";
 	}
 	$smarty->assign('SubmittalTypes',$SubmittalTypes);
+
+	// Organizations
+	$sql = "SELECT `DesignConsultant` FROM `DesignConsultantContact` WHERE `ProjectID` = '$ProjectID'";
+	$organizations = "<option value=\"\">--Select--</option>";
+	$result = $admin->new_mysql($sql);
+	while ($row = $result->fetch_assoc()) {
+		$organizations .= "<option>$row[DesignConsultantContact]</option>";
+	}
+	$smarty->assign('organizations',$organizations);
+
+	// Contacts
+	$sql = "SELECT `ContactName` FROM `PlanReviewContact` WHERE `ProjectID` = '$ProjectID'";
+	$contacts = "<option value=\"\">--Select--</option>";
+	$result = $admin->new_mysql($sql);
+	while ($row = $result->fetch_assoc()) {
+		$contacts .= "<option>$row[ContactName]</option>";
+	}
+	$smarty->assign('contacts',$contacts);
 
 	switch ($type) {
 		case "load":

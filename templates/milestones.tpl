@@ -39,13 +39,13 @@
 
 <tr>
 	<td><b>Organization:</b></td>
-	<td><select name="organization">{$organization}
+	<td><select name="organization">{$organizations}
 
 	</select></td>
 </tr>
 <tr>
 	<td><b>Contact Person:</b></td>
-	<td><select name="contact_person">{$contact_person}
+	<td><select name="contact_person">{$contacts}
 
 	</select></td>
 </tr>
