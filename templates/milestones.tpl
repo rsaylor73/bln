@@ -9,8 +9,6 @@
         </tr>
 </table>
 
-</form>
-
 <div id="milestone">
 <br>
 <table border=0 width=100%>
