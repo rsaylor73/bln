@@ -56,6 +56,13 @@
 
 	</td>
 </tr>
+
+{if $new eq "Yes"} {
+	<tr><td colspan="2"><input type="submit" value="Save" class="btn btn-primary"></td></tr>
+} else {
+	<tr><td colspan="2"><input type="submit" value="Update" class="btn btn-primary"></td></tr>
+}
+
 </table>
 
 <br>
@@ -71,6 +78,7 @@
 	<td>By</td>
 </tr>
 
+{$milestone_data}
 
 </table>
 <br><br>

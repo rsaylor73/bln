@@ -34,22 +34,13 @@ if ($_SESSION['tab3_read'] == "checked") {
 
 	switch ($type) {
 		case "load":
-
-
-                $smarty->assign('show_form','Yes');
-		if (($_GET['id'] == "") && ($_GET['id2'] == "")) {
-			$smarty->assign('new','Yes');
-		}
-		$smarty->assign('ProjectID',$ProjectID);
+	        $smarty->assign('show_form','Yes');
+			if (($_GET['id'] == "") && ($_GET['id2'] == "")) {
+				$smarty->assign('new','Yes');
+			}
+			$smarty->assign('ProjectID',$ProjectID);
 		break;
 	}
-
-
-
-
-
-
-
 
         $smarty->display('milestones.tpl');
 } else {
