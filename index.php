@@ -4,6 +4,10 @@ include "include/settings.php";
 include "include/mysql.php";
 include "include/templates.php";
 
+if ($_GET['ProjectID'] != "") {
+	$_SESSION['ProjectID'] = $_GET['ProjectID'];
+}
+
 $sql = "SELECT `state`.`state_abbr` FROM `state`,`users` WHERE `users`.`id` = '$_SESSION[id]' AND `users`.`default_state` = `state`.`state_id`";
 $result = $admin->new_mysql($sql);
 while ($row = $result->fetch_assoc()) {
