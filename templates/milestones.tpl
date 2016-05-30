@@ -1,4 +1,5 @@
-<form name="myform">
+<form name="myform" action="index.php" method="post">
+<input type="hidden" name="action" value="milestones">
 
 <br>
 
@@ -58,14 +59,15 @@
 </tr>
 
 {if $new eq "Yes"}
-	<tr><td colspan="2"><input type="submit" value="Save" class="btn btn-primary"></td></tr>
+	<tr><td colspan="2"><input type="submit" value="Save" class="btn btn-primary"><input type="hidden" name="section" value="new"></td></tr>
 {/if}
 
 {if $new ne "Yes"}
-	<tr><td colspan="2"><input type="submit" value="Update" class="btn btn-primary"></td></tr>
+	<tr><td colspan="2"><input type="submit" value="Update" class="btn btn-primary"><input type="hidden" name="section" value="update"><input type="hidden" name="id2" value="{$id2}"></td></tr>
 {/if}
 
 </table>
+</form>
 
 <br>
 

@@ -31,6 +31,55 @@ if ($_SESSION['tab3_read'] == "checked") {
 		$ProjectID = $_POST['ProjectID'];
 	}
 
+	// Insert new data
+    if (($write == "Yes") && ($_POST['section'] == "new")) {
+    	$sql = "INSERT INTO `Milestones` (`ProjectID`,`SubmittalTypeID`,`TargetDate`,`DateIn`,`TargetDateOut`,`DateOut`,`organization`,`contact_person`,`Comments`) VALUES
+    	('$ProjectID','$_POST[SubmittalTypeID]','$_POST[TargetDate]','$_POST[DateIn]','$_POST[TargetDateOut]','$_POST[DateOut]','$_POST[organization]','$_POST[contact_person]','$_POST[Comments]')";
+    	$result = $admin->new_mysql($sql);
+    
+    	// TBD - Insert into the other 2 tabs to the right
+
+    }
+
+    // load data
+    $sql = "
+    SELECT
+    	`s`.`Description`,
+    	`m`.`MilestoneID`,
+    	`m`.`ProjectID`,
+    	`m`.`TargetDate`,
+    	`m`.`DateIn`,
+    	`m`.`TargetDateOut`,
+    	`m`.`DateOut`,
+    	`m`.`organization`,
+    	`m`.`contact_person`,
+    	`m`.`Comments`
+
+    FROM
+    	`Milestones` m,
+    	`SubmittalTypes` s
+
+    WHERE
+    	`m`.`SubmittalTypeID` = `s`.`id`
+    	AND `m`.`ProjectID` = '$ProjectID'
+
+    ORDER BY `s`.`Description` DESC
+    ";
+    $result = $admin->new_mysql($sql);
+    while ($row = $result->fetch_assoc()) {
+    	$html .= "<tr>
+    	<td><input type=\"button\" value=\"Edit\" class=\"btn btn-primary\"></td>
+    	<td>$row[Description]</td>
+    	<td>$row[TargetDate]</td>
+    	<td>$row[DateIn]</td>
+    	<td>$row[TargetDateOut]</td>
+    	<td>$row[DateOut]</td>
+    	<td>$row[contact_person]</td>
+    	</tr>
+    	";
+    }
+    $smarty->assign('milestone_data',$html);
+
 	// Submittal Types
 	$SubmittalTypes = "<option value=\"\">--Select--</option>";
 	$sql = "SELECT * FROM `SubmittalTypes` ORDER BY `id` ASC";
