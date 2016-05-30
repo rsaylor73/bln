@@ -82,7 +82,7 @@
                 $.get('load_ms.php',
                 $(myform).serialize(),
                 function(php_msg) {
-                        $("#milestones").html(php_msg);
+                        $("#milestone").html(php_msg);
                 });
         }
 </script>
