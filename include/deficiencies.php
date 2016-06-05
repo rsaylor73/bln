@@ -78,6 +78,7 @@ if ($_SESSION['tab4_read'] == "checked") {
 				AND `d`.`SubmittalTypeID` = `s`.`id`
 
 			";
+			print "$sql<Br>";
 			$result = $admin->new_mysql($sql);
 			while ($row = $result->fetch_assoc()) {
 				foreach ($row as $key=>$value) {
