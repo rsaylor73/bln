@@ -138,7 +138,7 @@ if ($_SESSION['tab3_read'] == "checked") {
 					foreach ($row as $key=>$value) {
 						$smarty->assign($key,$value);
 					}
-					$smarty->assign('SubmittalTypes_default','<option selected value=\"$row[sid]\">$row[Description]</option>')
+					$smarty->assign('SubmittalTypes_default','<option selected value=\"$row[sid]\">$row[Description]</option>');
 				}
 			}
 			$smarty->assign('ProjectID',$ProjectID);
