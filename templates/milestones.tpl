@@ -63,7 +63,7 @@
 {/if}
 
 {if $new ne "Yes"}
-	<tr><td colspan="2"><input type="submit" value="Update" class="btn btn-primary"><input type="hidden" name="section" value="update"><input type="hidden" name="id2" value="{$id2}"></td></tr>
+	<tr><td colspan="2"><input type="submit" value="Update" class="btn btn-primary"><input type="hidden" name="section" value="update"></td></tr>
 {/if}
 
 </table>

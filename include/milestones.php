@@ -55,6 +55,7 @@ if ($_SESSION['tab3_read'] == "checked") {
     		`Comments` = '$_POST[Comments]'
     		WHERE `ProjectID` = '$_POST[ProjectID]' AND `MilestoneID` = '$_POST[id]'
     	";
+    	print "SQL: $sql<br>";
     	$result = $admin->new_mysql($sql);
     }
 
