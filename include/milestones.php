@@ -153,6 +153,7 @@ if ($_SESSION['tab3_read'] == "checked") {
 	switch ($type) {
 		case "load":
 	        $smarty->assign('show_form','Yes');
+	        print "Test: $_GET[id]<br>";
 			if (($_GET['id'] == "") && ($_GET['id2'] == "")) {
 				$smarty->assign('new','Yes');
 			} else {
