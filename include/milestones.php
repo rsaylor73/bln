@@ -141,7 +141,8 @@ if ($_SESSION['tab3_read'] == "checked") {
 					`m`.`TargetDateOut`,
 					`m`.`Comments`,
 					`m`.`contact_person`,
-					`m`.`organization`
+					`m`.`organization`,
+					`m`.`MilestoneID`
 
 				FROM
 					`Milestones` m,
