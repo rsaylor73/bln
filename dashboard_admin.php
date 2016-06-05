@@ -32,10 +32,11 @@ if ($temp != "") {
 		}
 	}
 
+	print '<ul class="nav nav-tabs nav-justified">';
 
-	print "<table border=1 width=100%>
-	<tr>
-	";
+	//print "<table border=1 width=100%>
+	//<tr>
+	//";
 	$sql2 = "
 	SELECT
 		`state`.`state_abbr`
@@ -47,7 +48,8 @@ if ($temp != "") {
 	";
 	$result2 = $this->new_mysql($sql2);
 	while ($row2 = $result2->fetch_assoc()) {
-		print "<td width=20%><b>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</td>";
+		//print "<td width=20%><b>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</td>";
+		print "<li>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</li>";
 		$found_state = "1";
 	}
 
@@ -57,31 +59,39 @@ if ($temp != "") {
 			$type_load = "&type=load";
 		}
 		if ($read1 == "ok") {
-			print "<td><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
+			//print "<td><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
+			print "<li><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></li>";
 		}
        	if ($read3 == "ok") {
-            print "<td><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
+            //print "<td><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
+       		print "<li><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></li>";
        	}
 		if ($read2 == "ok") {
-			print "<td><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
+			//print "<td><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
+			print "<li><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></li>";
 		}
 		if ($read4 == "ok") {
-			print "<td><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></td>";
+			//print "<td><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></td>";
+			print "<li><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></li>";
 		}
 		if ($read5 == "ok") {
-			print "<td><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b>";
+			//print "<td><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b>";
+			print "<li><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b></li>";
 		}
 
-		print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
-		print "<td width=20%><b>Tab 7 TBD</b></td>";
+		//print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
+		print "<li><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></li>";
+		//print "<td width=20%><b>Tab 7 TBD</b></td>";
+		print "<li><b>Tab 7 TBD</b></li>";
 
 	} else {
-		print "<td colspan=6>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</td>";
+		//print "<td colspan=6>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</td>";
+		print "<li>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</li>";
 	}
-	print "
-	</tr>
-	</table><br>";
-	
+	//print "
+	//</tr>
+	//</table><br>";
+	print "</ul>";
 
 	if (($_GET['action'] == "") && ($_POST['action'] == "")) {
 	print "<hr>
