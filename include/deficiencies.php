@@ -33,6 +33,42 @@ if ($_SESSION['tab4_read'] == "checked") {
 	$smarty->assign('ProjectID',$ProjectID);
 
 	if ($ProjectID != "") {
+
+		// update
+		if ($_POST['id'] != "") {
+			$sql = "UPDATE `Deficiencies` SET
+
+			`DesignSpeed` 			= '$_POST[DesignSpeed]',
+			`LaneWidths` 			= '$_POST[LaneWidths]',
+			`ShdrWidth_CurbOffset`	= '$_POST[ShdrWidth_CurbOffset]',
+			`BridgeWidth`			= '$_POST[BridgeWidth]',
+			`StructuralCapacity`	= '$_POST[StructuralCapacity]',
+			`HorizontalCurvature`	= '$_POST[HorizontalCurvature]',
+			`SuperElevationTransitionLengths`	= '$_POST[SuperElevationTransitionLengths]',
+			`HorizontalCurves`		= '$_POST[HorizontalCurves]',
+			`VerticalCurves`		= '$_POST[VerticalCurves]',
+			`MaximumGrade`			= '$_POST[MaximumGrade]',
+			`TravelLaneCrossSlope`	= '$_POST[TravelLaneCrossSlope]',
+			`SuperElevationRate`	= '$_POST[SuperElevationRate]',
+			`MinimumVerticalClearance` = '$_POST[MinimumVerticalClearance]',
+			`AccessibilityRequirements` = '$_POST[AccessibilityRequirements]',
+			`BridgeSafety`			= '$_POST[BridgeSafety]',
+			`ObstructionFreeZone`	= '$_POST[ObstructionFreeZone]',
+			`GuardrailLength`		= '$_POST[GuardrailLength]',
+			`GuardrailEndTreatment`	= '$_POST[GuardrailEndTreatment]',
+			`IntersectionSightDistance` = '$_POST[IntersectionSightDistance]',
+			`LateralOffsetToObstruction` = '$_POST[LateralOffsetToObstruction]'
+
+			WHERE `ID` = '$_POST[id]' AND `ProjectID` = '$ProjectID'
+			";
+			$result = $admin->new_mysql($sql);
+			if ($result == "TRUE") {
+				$smarty->assign('msg','<div class="alert alert-success" role="alert"><strong>Success</strong> The record was updated.</div>');
+			} else {
+				$smarty->assign('msg','<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> There was a MySQL error!</div>');
+			}
+		}
+
 		$sql = "
 		SELECT
 			`s`.`Description`,
