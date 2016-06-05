@@ -81,6 +81,7 @@ if ($_SESSION['tab4_read'] == "checked") {
 			$result = $admin->new_mysql($sql);
 			while ($row = $result->fetch_assoc()) {
 				foreach ($row as $key=>$value) {
+					print "$key => $value<br>";
 					$smarty->assign($key,$value);
 				}
 			}
