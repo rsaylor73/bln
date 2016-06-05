@@ -42,6 +42,11 @@ if ($check_login == "TRUE") {
 		include "include/milestones.php";
 	}
 
+	// Tab 4
+	if (($_GET['action'] == "deficiencies") OR ($_POST['action'] == "deficiencies")) {
+		include "include/deficiencies.php";
+	}
+
 	// Tab 6
 	if (($_GET['action'] == "constructability") OR ($_POST['action'] == "constructability")) {
 		include "include/constructability.php";

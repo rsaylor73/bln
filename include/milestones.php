@@ -7,7 +7,7 @@ Version 2.0
 */
 
 // check if you are allowed to write data
-if ($_SESSION['tab2_write'] == "checked") {
+if ($_SESSION['tab3_write'] == "checked") {
         $write = "Yes";
 }
 
