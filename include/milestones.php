@@ -37,6 +37,19 @@ if ($_SESSION['tab3_read'] == "checked") {
     	$sql = "INSERT INTO `Milestones` (`ProjectID`,`SubmittalTypeID`,`TargetDate`,`DateIn`,`TargetDateOut`,`DateOut`,`organization`,`contact_person`,`Comments`) VALUES
     	('$ProjectID','$_POST[SubmittalTypeID]','$_POST[TargetDate]','$_POST[DateIn]','$_POST[TargetDateOut]','$_POST[DateOut]','$_POST[organization]','$_POST[contact_person]','$_POST[Comments]')";
     	$result = $admin->new_mysql($sql);
+    	if ($result == "TRUE") {
+    		print '
+			<div class="alert alert-success" role="alert">
+  				<strong>Success</strong> You successfully added a milestone.
+			</div>
+    		';
+    	} else {
+    		print '
+			<div class="alert alert-danger" role="alert">
+  				<strong>Oh snap!</strong> There was a MySQL error!
+			</div>
+    		';
+    	}
     
     	// TBD - Insert into the other 2 tabs to the right
 
@@ -55,8 +68,20 @@ if ($_SESSION['tab3_read'] == "checked") {
     		`Comments` = '$_POST[Comments]'
     		WHERE `ProjectID` = '$_POST[ProjectID]' AND `MilestoneID` = '$_POST[id]'
     	";
-    	print "SQL: $sql<br>";
     	$result = $admin->new_mysql($sql);
+    	if ($result == "TRUE") {
+    		print '
+			<div class="alert alert-success" role="alert">
+  				<strong>Success</strong> You successfully updated a milestone.
+			</div>
+    		';
+    	} else {
+    		print '
+			<div class="alert alert-danger" role="alert">
+  				<strong>Oh snap!</strong> There was a MySQL error!
+			</div>
+    		';
+    	}
     }
 
     // load data
