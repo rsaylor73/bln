@@ -113,6 +113,32 @@ if ($_SESSION['tab3_read'] == "checked") {
 	        $smarty->assign('show_form','Yes');
 			if (($_GET['id'] == "") && ($_GET['id2'] == "")) {
 				$smarty->assign('new','Yes');
+			} else {
+				$sql = "
+				SELECT
+					`s`.`Description`,
+					`s`.`id` AS 'sid',
+					`m`.`TargetDate`,
+					`m`.`DateIn`,
+					`m`.`DateOut`,
+					`m`.`TargetDateOut`,
+					`m`.`Comments`,
+					`m`.`contact_person`
+
+				FROM
+					`Milestones` m,
+					`SubmittalTypes` s
+				
+				WHERE
+					`m`.`MilestoneID` = '$_GET[id]'
+					AND `m`.`SubmittalTypeID` = `s`.`id`
+				";
+				$result = $admin->new_mysql($sql);
+				while ($row = $result->fetch_assoc()) {
+					foreach ($row as $key=>$value) {
+						$smarty->assign($key,$value);
+					}
+				}
 			}
 			$smarty->assign('ProjectID',$ProjectID);
 		break;
