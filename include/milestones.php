@@ -69,7 +69,7 @@ if ($_SESSION['tab3_read'] == "checked") {
     $result = $admin->new_mysql($sql);
     while ($row = $result->fetch_assoc()) {
     	$html .= "<tr>
-    	<td><input type=\"button\" value=\"Edit\" class=\"btn btn-primary\"></td>
+    	<td><input type=\"button\" value=\"Edit\" class=\"btn btn-primary\" onclick=\"document.location.href='index.php?action=milestones&type=load&ProjectID=$ProjectID&id=$row[MilestoneID]\"'></td>
     	<td>$row[Description]</td>
     	<td>$row[TargetDate]</td>
     	<td>$row[DateIn]</td>
