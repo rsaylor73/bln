@@ -124,7 +124,7 @@
                         </tr>
                         <tr>
                         	<td align="right">Milestone Description</td>
-                        	<td colspan=2><select name="Description">{$Description}</select></td>
+                        	<td colspan=2><select name="Description"><option selected>{$Description}</option></select></td>
                         </tr>
                 </table>
         </td></tr>
