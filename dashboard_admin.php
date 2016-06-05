@@ -53,7 +53,7 @@ if ($temp != "") {
 		$found_state = "1";
 	}
 
-
+	print '<ul class="dropdown-menu">';
 	if ($found_state == "1") {
 		if ($_SESSION['ProjectID'] != "") {
 			$type_load = "&type=load";
@@ -84,6 +84,7 @@ if ($temp != "") {
 		//print "<td width=20%><b>Tab 7 TBD</b></td>";
 		print "<li><b>Tab 7 TBD</b></li>";
 
+		print "</ul>";
 	} else {
 		//print "<td colspan=6>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</td>";
 		print "<li>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</li>";
