@@ -14,7 +14,7 @@
 <br>
 <table border=0 width=100%>
 <tr>
-	<td width=200><b>Submittal Type:</b></td><td><select name="SubmittalTypeID" required>{$SubmittalTypes}
+	<td width=200><b>Submittal Type:</b></td><td><select name="SubmittalTypeID" required>{$SubmittalTypes_default}{$SubmittalTypes}
 
 	</select></td>
 </tr>
