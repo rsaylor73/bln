@@ -44,9 +44,9 @@ if ($_SESSION['tab3_read'] == "checked") {
   				<strong>Success</strong> You successfully added a milestone.
 			</div>
     		';
-    		$sql2 = "INSERT INTO `Deficiencies` (`ProjectCode`,`MilestoneDescription`,`MilestoneID`) VALUES ('$ProjectCode','$_POST[SubmittalTypeID]','$MilestoneID')";
+    		$sql2 = "INSERT INTO `Deficiencies` (`ProjectID`,`SubmittalTypeID`,`MilestoneID`) VALUES ('$ProjectCode','$_POST[SubmittalTypeID]','$MilestoneID')";
     		$result2 = $admin->new_mysql($sql2);
-    		$sql2 = "INSERT INTO `ratings` (`ProjectCode`,`submission`,`MilestoneID`) VALUES ('$ProjectCode','$_POST[SubmittalTypeID]','$MilestoneID')";
+    		$sql2 = "INSERT INTO `ratings` (`ProjectID`,`SubmittalTypeID`,`MilestoneID`) VALUES ('$ProjectCode','$_POST[SubmittalTypeID]','$MilestoneID')";
     		$result2 = $admin->new_mysql($sql2);
     	} else {
     		print '
