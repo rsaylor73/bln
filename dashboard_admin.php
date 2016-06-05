@@ -53,6 +53,10 @@ if ($temp != "") {
 		$found_state = "1";
 	}
 
+	print '<li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Dropdown <span class="caret"></span>
+    </a>';
 	print '<ul class="dropdown-menu">';
 	if ($found_state == "1") {
 		if ($_SESSION['ProjectID'] != "") {
