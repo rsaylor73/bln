@@ -32,7 +32,7 @@ if ($temp != "") {
 		}
 	}
 
-	print '<ul class="nav nav-tabs nav-justified">';
+	print '<ul class="nav nav-tabs">';
 
 	//print "<table border=1 width=100%>
 	//<tr>
