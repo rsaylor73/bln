@@ -36,7 +36,7 @@ if ($_SESSION['tab4_read'] == "checked") {
 		$sql = "
 		SELECT
 			`s`.`Description`,
-			`m`.*
+			`d`.*
 
 		FROM
 			`Deficiencies` d,
