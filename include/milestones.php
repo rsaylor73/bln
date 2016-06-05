@@ -123,7 +123,8 @@ if ($_SESSION['tab3_read'] == "checked") {
 					`m`.`DateOut`,
 					`m`.`TargetDateOut`,
 					`m`.`Comments`,
-					`m`.`contact_person`
+					`m`.`contact_person`,
+					`m`.`organization`
 
 				FROM
 					`Milestones` m,
@@ -139,6 +140,8 @@ if ($_SESSION['tab3_read'] == "checked") {
 						$smarty->assign($key,$value);
 					}
 					$smarty->assign('SubmittalTypes_default',"<option selected value=\"$row[sid]\">$row[Description]</option>");
+					$smarty->assign('contact_person_default',"<option selected>$row[contact_person]</option>");
+					$smarty->assign('organization_default',"<option selected>$row[organization]</option>");
 				}
 			}
 			$smarty->assign('ProjectID',$ProjectID);

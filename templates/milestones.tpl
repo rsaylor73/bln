@@ -1,6 +1,7 @@
 <form name="myform" action="index.php" method="post">
 <input type="hidden" name="action" value="milestones">
 <input type="hidden" name="ProjectID" value="{$ProjectID}">
+<input type="hidden" name="MilestoneID" value="{$MilestoneID}">
 
 <br>
 
@@ -39,13 +40,13 @@
 
 <tr>
 	<td><b>Organization:</b></td>
-	<td><select name="organization">{$organizations}
+	<td><select name="organization">{$organization_default}{$organizations}
 
 	</select></td>
 </tr>
 <tr>
 	<td><b>Contact Person:</b></td>
-	<td><select name="contact_person">{$contacts}
+	<td><select name="contact_person">{$contact_person_default}{$contacts}
 
 	</select></td>
 </tr>
