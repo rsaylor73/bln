@@ -60,6 +60,8 @@ if ($_SESSION['tab4_read'] == "checked") {
 			";
 		}
 
+
+
 		if ($_GET['id'] != "") {
 			$sql = "
 			SELECT

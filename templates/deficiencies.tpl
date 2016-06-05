@@ -1,6 +1,7 @@
 <form name="myform" action="index.php" method="post">
 <input type="hidden" name="action" value="deficiencies">
 <input type="hidden" name="ProjectID" value="{$ProjectID}">
+<input type="hidden" name="id" value="{$ID}">
 
 <br>
 
@@ -12,7 +13,7 @@
 
 <b>Number of U N I D E N T I F I E D Design Deficiencies</b><br><br>
 
-<form name="deficiencies">
+<div name="deficiencies">
 <table border=0 width=100%>
         <tr><td width=50% valign=top>
                 <table border=0 width=100%>
@@ -123,7 +124,7 @@
                         </tr>
                         <tr>
                         	<td align="right">Milestone Description</td>
-                        	<td colspan=2><select name="MilestoneDescription">{$MilestoneDescription}</select></td>
+                        	<td colspan=2><select name="Description">{$Description}</select></td>
                         </tr>
                 </table>
         </td></tr>
