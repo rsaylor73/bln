@@ -127,6 +127,9 @@
                         	<td colspan=2><select name="Description"><option selected>{$Description}</option></select></td>
                         </tr>
                 </table>
+                {if $ID ne ""}
+                <input type="submit" class="btn btn-primary" value="Update">
+                {/if}
         </td></tr>
 </table>
 </form>
