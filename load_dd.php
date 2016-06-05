@@ -42,7 +42,7 @@ include "include/templates.php";
 		$result = $admin->new_mysql($sql);
 		while ($row = $result->fetch_assoc()) {
 			$ProjectID = $row['ProjectID'];
-			$html .= "<tr><td><a href=\"index.php?action=milestones&type=load&ProjectID=$row[ProjectID]\">$row[ProjectName]</a></td><td>$row[PayItem]</td></tr>";
+			$html .= "<tr><td><a href=\"index.php?action=deficiencies&ProjectID=$row[ProjectID]\">$row[ProjectName]</a></td><td>$row[PayItem]</td></tr>";
 			$found++;
 		}
 		// show list
@@ -59,7 +59,7 @@ include "include/templates.php";
 			print "<br>Loading...<br>";
 			?>
 			<script>
-				document.location.href='index.php?action=milestones&type=load&ProjectID=<?=$ProjectID;?>';
+				document.location.href='index.php?action=deficiencies&ProjectID=<?=$ProjectID;?>';
 			</script>
 			<?
 			//print "<meta http-equiv=\"refresh\" content=\"0; url=index.php?action=pe&type=load&ProjectID=$ProjectID\">";
