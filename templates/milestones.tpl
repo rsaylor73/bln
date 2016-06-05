@@ -1,7 +1,7 @@
 <form name="myform" action="index.php" method="post">
 <input type="hidden" name="action" value="milestones">
 <input type="hidden" name="ProjectID" value="{$ProjectID}">
-<input type="hidden" name="MilestoneID" value="{$MilestoneID}">
+<input type="hidden" name="id" value="{$MilestoneID}">
 
 <br>
 

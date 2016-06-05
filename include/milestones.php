@@ -42,6 +42,22 @@ if ($_SESSION['tab3_read'] == "checked") {
 
     }
 
+    if (($write == "Yes") && ($_POST['id'] != "")) {
+    	$_GET['id'] = $_POST['id'];
+    	$sql = "UPDATE `Milestones` SET 
+    		`SubmittalTypeID` = '$_POST[SubmittalTypeID]',
+    		`TargetDate` = '$_POST[TargetDate]',
+    		`DateIn` = '$_POST[DateIn]',
+    		`TargetDateOut` = '$_POST[TargetDateOut]',
+    		`DateOut` = '$_POST[DateOut]',
+    		`organization` = '$_POST[organization]',
+    		`contact_person` = '$_POST[contact_person]',
+    		`Comments` = '$_POST[Comments]'
+    		WHERE `ProjectID` = '$_POST[ProjectID]' AND `MilestoneID` = '$_POST[id]'
+    	";
+    	$result = $admin->new_mysql($sql);
+    }
+
     // load data
     $sql = "
     SELECT
