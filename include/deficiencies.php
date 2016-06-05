@@ -32,6 +32,35 @@ if ($_SESSION['tab4_read'] == "checked") {
 	}
 	$smarty->assign('ProjectID',$ProjectID);
 
+	if ($ProjectID != "") {
+		$sql = "
+		SELECT
+			`s`.`Description`,
+			`m`.*
+
+		FROM
+			`Deficiencies` d,
+			`SubmittalTypes` s
+
+		WHERE
+			`d`.`ProjectID` = '$ProjectID'
+			AND `d`.`SubmittalTypeID` = `s`.`id`
+		";
+		$result = $admin->new_mysql($sql);
+		while ($row = $result->fetch_assoc()) {
+			$data .= "<tr>
+			<td><input type=\"button\" class=\"btn btn-primary\" value=\"Edit\">&nbsp;&nbsp;$row[Description]</td>
+			<td>$row[DesignSpeed]</td><td>$row[LaneWidths]</td><td>$row[ShdrWidth_CurbOffset]</td><td>$row[BridgeWidth]</td><td>$row[HorizontalCurves]</td>
+			<td>$row[SuperElevationRate]</td><td>$row[VerticalCurves]</td><td>$row[SuperElevationTransitionLengths]</td><td>$row[MaximumGrade]</td>
+			<td>$row[ObstructionFreeZone]</td><td>$row[TravelLaneCrossSlope]</td><td>$row[MinimumVerticalClearance]</td><td>$row[LateralOffsetToObstruction]</td>
+			<td>$row[StructuralCapacity]</td><td>$row[BridgeSafety]</td><td>$row[AccessibilityRequirements]</td>
+			<td>$row[GuardrailLength]</td><td>$row[GuardrailEndTreatment]</td><td>$row[IntersectionSightDistance]</td>
+			</tr>
+			";
+		}
+		$smarty->assign('data',$data);
+	}
+
 
 	$smarty->display('deficiencies.tpl');
 
