@@ -64,7 +64,7 @@
 
 {if $new ne "Yes"}
 	<tr><td colspan="2"><input type="submit" value="Update" class="btn btn-primary"><input type="hidden" name="section" value="update">&nbsp;&nbsp;&nbsp; 
-	<input type="checkbox" name="delete" value="yes" onclick="return confirm('You are about to delete this Milestone. Click OK to continue.')"> <font color=red><b><i>Delete Milestone</i></b></font></td></tr>
+	<input type="checkbox" name="delete" value="yes" onclick="return confirm('You are about to delete this Milestone. This will also remove the Milestone from Design Deficincies and Ratings. Click OK to continue.')"> <font color=red><b><i>Delete Milestone</i></b></font></td></tr>
 {/if}
 
 </table>

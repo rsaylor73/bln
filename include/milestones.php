@@ -93,6 +93,10 @@ if ($_SESSION['tab3_read'] == "checked") {
     		$sql = "DELETE FROM `Milestones` WHERE `ProjectID` = '$_POST[ProjectID]' AND `MilestoneID` = '$_POST[id]'";
     		$result = $admin->new_mysql($sql);
     		if ($result == "TRUE") {
+                $sql2 = "DELETE FROM `Deficiencies` WHERE `MilestoneID` = '$_POST[id]'";
+                $result2 = $admin->new_mysql($sql2);
+                $sql2 = "DELETE FROM `ratings` WHERE `MilestoneID` = '$_POST[id]'";
+                $result2 = $admin->new_mysql($sql2);
     			print '
 				<div class="alert alert-success" role="alert">
   					<strong>Success</strong> You successfully deleted a milestone.
