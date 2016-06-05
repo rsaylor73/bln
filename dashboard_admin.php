@@ -55,7 +55,7 @@ if ($temp != "") {
 
 	print '<li role="presentation" class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      Dropdown <span class="caret"></span>
+      Menu <span class="caret"></span>
     </a>';
 	print '<ul class="dropdown-menu">';
 	if ($found_state == "1") {
@@ -64,29 +64,29 @@ if ($temp != "") {
 		}
 		if ($read1 == "ok") {
 			//print "<td><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
-			print "<li><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></li>";
+			print "<li role=presentation><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></li>";
 		}
        	if ($read3 == "ok") {
             //print "<td><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
-       		print "<li><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></li>";
+       		print "<li role=presentation><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></li>";
        	}
 		if ($read2 == "ok") {
 			//print "<td><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
-			print "<li><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></li>";
+			print "<li role=presentation><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></li>";
 		}
 		if ($read4 == "ok") {
 			//print "<td><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></td>";
-			print "<li><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></li>";
+			print "<li role=presentation><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></li>";
 		}
 		if ($read5 == "ok") {
 			//print "<td><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b>";
-			print "<li><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b></li>";
+			print "<li role=presentation><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b></li>";
 		}
 
 		//print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
-		print "<li><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></li>";
+		print "<li role=presentation><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></li>";
 		//print "<td width=20%><b>Tab 7 TBD</b></td>";
-		print "<li><b>Tab 7 TBD</b></li>";
+		print "<li role=presentation><b>Tab 7 TBD</b></li>";
 
 		print "</ul>";
 	} else {
