@@ -56,32 +56,50 @@ if ($_SESSION['tab3_read'] == "checked") {
     }
 
     if (($write == "Yes") && ($_POST['id'] != "")) {
-    	$_GET['id'] = $_POST['id'];
-    	$type = "load";
-    	$sql = "UPDATE `Milestones` SET 
-    		`SubmittalTypeID` = '$_POST[SubmittalTypeID]',
-    		`TargetDate` = '$_POST[TargetDate]',
-    		`DateIn` = '$_POST[DateIn]',
-    		`TargetDateOut` = '$_POST[TargetDateOut]',
-    		`DateOut` = '$_POST[DateOut]',
-    		`organization` = '$_POST[organization]',
-    		`contact_person` = '$_POST[contact_person]',
-    		`Comments` = '$_POST[Comments]'
-    		WHERE `ProjectID` = '$_POST[ProjectID]' AND `MilestoneID` = '$_POST[id]'
-    	";
-    	$result = $admin->new_mysql($sql);
-    	if ($result == "TRUE") {
-    		print '
-			<div class="alert alert-success" role="alert">
-  				<strong>Success</strong> You successfully updated a milestone.
-			</div>
-    		';
+    	if ($_POST['delete'] != "yes") {
+	    	$_GET['id'] = $_POST['id'];
+    		$type = "load";
+    		$sql = "UPDATE `Milestones` SET 
+    			`SubmittalTypeID` = '$_POST[SubmittalTypeID]',
+	    		`TargetDate` = '$_POST[TargetDate]',
+    			`DateIn` = '$_POST[DateIn]',
+    			`TargetDateOut` = '$_POST[TargetDateOut]',
+    			`DateOut` = '$_POST[DateOut]',
+    			`organization` = '$_POST[organization]',
+    			`contact_person` = '$_POST[contact_person]',
+    			`Comments` = '$_POST[Comments]'
+    			WHERE `ProjectID` = '$_POST[ProjectID]' AND `MilestoneID` = '$_POST[id]'
+    		";
+    		$result = $admin->new_mysql($sql);
+    		if ($result == "TRUE") {
+    			print '
+				<div class="alert alert-success" role="alert">
+  					<strong>Success</strong> You successfully updated a milestone.
+				</div>
+    			';
+    		} else {
+    			print '
+				<div class="alert alert-danger" role="alert">
+  					<strong>Oh snap!</strong> There was a MySQL error!
+				</div>
+    			';
+    		}
     	} else {
-    		print '
-			<div class="alert alert-danger" role="alert">
-  				<strong>Oh snap!</strong> There was a MySQL error!
-			</div>
-    		';
+    		$sql = "DELETE FROM `Milestones` WHERE `ProjectID` = '$_POST[ProjectID]' AND `MilestoneID` = '$_POST[id]'";
+    		$result = $admin->new_mysql($sql);
+    		if ($result == "TRUE") {
+    			print '
+				<div class="alert alert-success" role="alert">
+  					<strong>Success</strong> You successfully deleted a milestone.
+				</div>
+    			';
+    		} else {
+    			print '
+				<div class="alert alert-danger" role="alert">
+  					<strong>Oh snap!</strong> There was a MySQL error!
+				</div>
+    			';
+    		}
     	}
     }
 
