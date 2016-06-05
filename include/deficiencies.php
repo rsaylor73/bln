@@ -49,7 +49,8 @@ if ($_SESSION['tab4_read'] == "checked") {
 		$result = $admin->new_mysql($sql);
 		while ($row = $result->fetch_assoc()) {
 			$data .= "<tr>
-			<td><input type=\"button\" class=\"btn btn-primary\" value=\"Edit\">&nbsp;&nbsp;$row[Description]</td>
+			<td><input type=\"button\" class=\"btn btn-primary\" value=\"Edit\" onclick=\"document.location.href='index.php?action=deficiencies&ProjectID=$ProjectID&id=$row[ID]'\">
+			&nbsp;&nbsp;$row[Description]</td>
 			<td>$row[DesignSpeed]</td><td>$row[LaneWidths]</td><td>$row[ShdrWidth_CurbOffset]</td><td>$row[BridgeWidth]</td><td>$row[HorizontalCurves]</td>
 			<td>$row[SuperElevationRate]</td><td>$row[VerticalCurves]</td><td>$row[SuperElevationTransitionLengths]</td><td>$row[MaximumGrade]</td>
 			<td>$row[ObstructionFreeZone]</td><td>$row[TravelLaneCrossSlope]</td><td>$row[MinimumVerticalClearance]</td><td>$row[LateralOffsetToObstruction]</td>
