@@ -38,11 +38,16 @@ if ($_SESSION['tab3_read'] == "checked") {
     	('$ProjectID','$_POST[SubmittalTypeID]','$_POST[TargetDate]','$_POST[DateIn]','$_POST[TargetDateOut]','$_POST[DateOut]','$_POST[organization]','$_POST[contact_person]','$_POST[Comments]')";
     	$result = $admin->new_mysql($sql);
     	if ($result == "TRUE") {
+    		$MilestoneID = $admin->linkID->insert_id;
     		print '
 			<div class="alert alert-success" role="alert">
   				<strong>Success</strong> You successfully added a milestone.
 			</div>
     		';
+    		$sql2 = "INSERT INTO `Deficiencies` (`ProjectCode`,`MilestoneDescription`,`MilestoneID`) VALUES ('$ProjectCode','$_POST[SubmittalTypeID]','$MilestoneID')";
+    		$result2 = $admin->new_mysql($sql2);
+    		$sql2 = "INSERT INTO `ratings` (`ProjectCode`,`submission`,`MilestoneID`) VALUES ('$ProjectCode','$_POST[SubmittalTypeID]','$MilestoneID')";
+    		$result2 = $admin->new_mysql($sql2);
     	} else {
     		print '
 			<div class="alert alert-danger" role="alert">
@@ -51,7 +56,7 @@ if ($_SESSION['tab3_read'] == "checked") {
     		';
     	}
     
-    	// TBD - Insert into the other 2 tabs to the right
+    	
 
     }
 
