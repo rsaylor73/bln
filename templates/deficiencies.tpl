@@ -13,7 +13,7 @@
 
 <b>Number of U N I D E N T I F I E D Design Deficiencies</b><br><br>
 
-<div name="deficiencies">
+<div id="deficiencies">
 {$msg}
 <table border=0 width=100%>
         <tr><td width=50% valign=top>
