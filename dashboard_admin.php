@@ -49,7 +49,7 @@ if ($temp != "") {
 	$result2 = $this->new_mysql($sql2);
 	while ($row2 = $result2->fetch_assoc()) {
 		//print "<td width=20%><b>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</td>";
-		print "<li>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</li>";
+		print "<li>Default State: <font color=green>$row2[state_abbr]</font></b></li>";
 		$found_state = "1";
 	}
 
@@ -97,6 +97,8 @@ if ($temp != "") {
 	//</tr>
 	//</table><br>";
 	print "</ul>";
+
+	print "<input type=\"button\" class=\"btn btn-success\" onclick=\"document.location.href='index.php?action=change_state'\" value=\"Change State\">";
 
 	if (($_GET['action'] == "") && ($_POST['action'] == "")) {
 	print "<hr>
