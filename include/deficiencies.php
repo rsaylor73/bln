@@ -59,6 +59,31 @@ if ($_SESSION['tab4_read'] == "checked") {
 			</tr>
 			";
 		}
+
+		if ($_GET['id'] != "") {
+			$sql = "
+			SELECT
+				`s`.`Description`,
+				`d`.*
+
+			FROM
+				`Deficiencies` d,
+				`SubmittalTypes` s
+
+			WHERE
+				`d`.`ProjectID` = '$ProjectID'
+				AND `d`.`ID` = '$_GET[id]'
+				AND `d`.`SubmittalTypeID` = `s`.`id`
+
+			";
+			$result = $admin->new_mysql($sql);
+			while ($row = $result->fetch_assoc()) {
+				foreach ($row as $key=>$value) {
+					$smarty->assign($key,$value);
+				}
+			}
+		}
+
 		$smarty->assign('data',$data);
 	}
 
