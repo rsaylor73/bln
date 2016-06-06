@@ -46,7 +46,7 @@ if ($temp != "") {
 	";
 
 	print '
-	<nav class="navbar navbar-primary">
+	<nav class="navbar navbar-dark bg-primary">
   	<div class="container-fluid">
     <div class="navbar-header">
 	';
