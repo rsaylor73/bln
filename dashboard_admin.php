@@ -33,22 +33,19 @@ if ($temp != "") {
 	}
 
 	print '
-<ul class="nav nav-tabs">
-	<li role=presentation class=active><a href=#>Home</a></li>
-	<li role=presentation>
-		<a href=#>Help</a>
-	</li> 
-	<li role=presentation class=dropdown>
-	<a class=dropdown-toggle data-toggle=dropdown href=# role=button aria-haspopup=true aria-expanded=false> Dropdown <span class=caret></span> </a>
-		<ul class=dropdown-menu>
-			<li><a href=#>Action</a></li> 
-			<li><a href=#>Another action</a></li> 
-			<li><a href=#>Something else here</a></li> 
-			<li role=separator class=divider></li> 
-			<li><a href=#>Separated link</a></li> 
-		</ul> 
-	</li>
-</ul>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
 ';
 
 	print '<ul class="nav nav-tabs">';
