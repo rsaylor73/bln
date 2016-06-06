@@ -45,6 +45,11 @@ if ($temp != "") {
 		AND `users`.`default_state` = `state`.`state_id`
 	";
 
+	print '
+	<nav class="navbar navbar-default">
+  	<div class="container-fluid">
+    <div class="navbar-header">
+	';
 
 	$result2 = $this->new_mysql($sql2);
 	while ($row2 = $result2->fetch_assoc()) {
