@@ -49,14 +49,14 @@ if ($temp != "") {
 	$result2 = $this->new_mysql($sql2);
 	while ($row2 = $result2->fetch_assoc()) {
 		//print "<td width=20%><b>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</td>";
-		print "<li>Default State: <font color=green>$row2[state_abbr]</font></b></li>";
+		print "<li role=presentation class=active><a href=\"#\">Default State: $row2[state_abbr]</a></li>";
 		$found_state = "1";
 	}
 
-	print '<li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      Menu <span class="caret"></span>
-    </a>';
+	print '<li role=presentation class=dropdown>
+	<a class=dropdown-toggle data-toggle=dropdown href=# role=button aria-haspopup=true aria-expanded=false> Menu <span class=caret></span> </a>
+	<ul class=dropdown-menu>';
+
 	print '<ul class="dropdown-menu">';
 	if ($found_state == "1") {
 		if ($_SESSION['ProjectID'] != "") {
@@ -64,39 +64,38 @@ if ($temp != "") {
 		}
 		if ($read1 == "ok") {
 			//print "<td><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
-			print "<li role=presentation><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></li>";
+			print "<li><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></li>";
 		}
        	if ($read3 == "ok") {
             //print "<td><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
-       		print "<li role=presentation><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></li>";
+       		print "<li><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></li>";
        	}
 		if ($read2 == "ok") {
 			//print "<td><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
-			print "<li role=presentation><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></li>";
+			print "<li><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></li>";
 		}
 		if ($read4 == "ok") {
 			//print "<td><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></td>";
-			print "<li role=presentation><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></li>";
+			print "<li><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></li>";
 		}
 		if ($read5 == "ok") {
 			//print "<td><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b>";
-			print "<li role=presentation><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b></li>";
+			print "<li><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></li>";
 		}
 
 		//print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
-		print "<li role=presentation><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></li>";
+		print "<li><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></li>";
 		//print "<td width=20%><b>Tab 7 TBD</b></td>";
-		print "<li role=presentation><b>Tab 7 TBD</b></li>";
+		print "<li><a href=\"#\">Tab 7 TBD</a></li>";
 
-		print "</ul>";
 	} else {
 		//print "<td colspan=6>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</td>";
-		print "<li>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</li>";
+		print "<li><a href=\"#\">You currently do not have a default state set</a></li>";
 	}
 	//print "
 	//</tr>
 	//</table><br>";
-	print "</ul>";
+	print "</ul></li></ul>";
 
 	print "<input type=\"button\" class=\"btn btn-success\" onclick=\"document.location.href='index.php?action=change_state'\" value=\"Change State\">";
 
