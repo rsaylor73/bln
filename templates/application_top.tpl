@@ -5,5 +5,4 @@
 
 <div id="adminquestionbox">
         <div id="questionbox_inner">
-        <a href="index.php">Dashboard Home</a><br><br>
 
