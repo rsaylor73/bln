@@ -51,6 +51,29 @@ if ($temp != "") {
     <div class="navbar-header">
 	';
 
+	// find active
+	if (($_GET['action'] == "") && ($_POST['action'] == "")) {
+		$t0 = "class=\"active\"";
+	}
+	if (($_GET['action'] == "pe") or ($_POST['action'] == "pe")) {
+		$t1 = "class=\"active\"";
+	}
+	if (($_GET['action'] == "contacts") or ($_POST['action'] == "contacts")) {
+		$t2 = "class=\"active\"";
+	}
+	if (($_GET['action'] == "milestones") or ($_POST['action'] == "milestones")) {
+		$t3 = "class=\"active\"";
+	}
+	if (($_GET['action'] == "deficiencies") or ($_POST['action'] == "deficiencies")) {
+		$t4 = "class=\"active\"";
+	}
+	if (($_GET['action'] == "ratings") or ($_POST['action'] == "ratings")) {
+		$t5 = "class=\"active\"";
+	}
+	if (($_GET['action'] == "constructability") or ($_POST['action'] == "constructability")) {
+		$t6 = "class=\"active\"";
+	}
+
 	$result2 = $this->new_mysql($sql2);
 	while ($row2 = $result2->fetch_assoc()) {
 		//print "<td width=20%><b>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</td>";
@@ -63,7 +86,7 @@ if ($temp != "") {
 	print '</div>';
 
 	print '<ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">Home</a></li>';
+      <li '.$t0.'><a href="index.php">Home</a></li>';
 
 	if ($found_state == "1") {
 		if ($_SESSION['ProjectID'] != "") {
@@ -71,29 +94,29 @@ if ($temp != "") {
 		}
 		if ($read1 == "ok") {
 			//print "<td><b><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></b></td>";
-			print "<li><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></li>";
+			print "<li $t1><a href=\"index.php?action=pe$type_load&ProjectID=$_SESSION[ProjectID]\">Project Entry</a></li>";
 		}
        	if ($read3 == "ok") {
             //print "<td><b><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></b></td>";
-       		print "<li><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></li>";
+       		print "<li $t2><a href=\"index.php?action=contacts$type_load&ProjectID=$_SESSION[ProjectID]\">Contacts</a></li>";
        	}
 		if ($read2 == "ok") {
 			//print "<td><b><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></b></td>";
-			print "<li><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></li>";
+			print "<li $t3><a href=\"index.php?action=milestones$type_load&ProjectID=$_SESSION[ProjectID]\">Milestones</a></li>";
 		}
 		if ($read4 == "ok") {
 			//print "<td><b><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></b></td>";
-			print "<li><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></li>";
+			print "<li $t4><a href=\"index.php?action=deficiencies&ProjectID=$_SESSION[ProjectID]\">Design Deficiencies</a></li>";
 		}
 		if ($read5 == "ok") {
 			//print "<td><b><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></b>";
-			print "<li><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></li>";
+			print "<li $t5><a href=\"index.php?action=ratings&ProjectID=$_SESSION[ProjectID]\">Ratings</a></li>";
 		}
 
 		//print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
-		print "<li><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></li>";
+		print "<li $t7><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></li>";
 		//print "<td width=20%><b>Tab 7 TBD</b></td>";
-		print "<li><a href=\"#\">Tab 7 TBD</a></li>";
+		print "<li $t7><a href=\"#\">Tab 7 TBD</a></li>";
 
 	} else {
 		//print "<td colspan=6>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</td>";
