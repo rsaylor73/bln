@@ -114,7 +114,7 @@ if ($temp != "") {
 		}
 
 		//print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
-		print "<li $t7><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></li>";
+		print "<li $t6><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></li>";
 		//print "<td width=20%><b>Tab 7 TBD</b></td>";
 		print "<li $t7><a href=\"#\">Tab 7 TBD</a></li>";
 
