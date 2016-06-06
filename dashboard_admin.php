@@ -32,24 +32,6 @@ if ($temp != "") {
 		}
 	}
 
-	print '
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-  </div>
-</nav>
-';
-
-	print '<ul class="nav nav-tabs">';
-
 	//print "<table border=1 width=100%>
 	//<tr>
 	//";
@@ -62,18 +44,22 @@ if ($temp != "") {
 		`users`.`id` = '$_SESSION[id]'
 		AND `users`.`default_state` = `state`.`state_id`
 	";
+
+
 	$result2 = $this->new_mysql($sql2);
 	while ($row2 = $result2->fetch_assoc()) {
 		//print "<td width=20%><b>Default State: <font color=green>$row2[state_abbr]</font></b> (<a href=\"index.php?action=change_state\">Change</a>)</td>";
-		print "<li role=presentation class=active><a href=\"#\">Default State: $row2[state_abbr]</a></li>";
+		print "<a class=\"navbar-brand\" href=\"#\">Default State: $row2[state_abbr]</a>";
 		$found_state = "1";
 	}
+	if ($found_state == "") {
+		print "<a class=\"navbar-brand\" href=\"#\">Default State: None</a>";
+	}
+	print '</div>';
 
-	print '<li role=presentation class=dropdown>
-	<a class=dropdown-toggle data-toggle=dropdown href=# role=button aria-haspopup=true aria-expanded=false> Menu <span class=caret></span> </a>
-	<ul class=dropdown-menu>';
+	print '<ul class="nav navbar-nav">
+      <li class="active"><a href="index.php">Home</a></li>';
 
-	print '<ul class="dropdown-menu">';
 	if ($found_state == "1") {
 		if ($_SESSION['ProjectID'] != "") {
 			$type_load = "&type=load";
@@ -111,9 +97,9 @@ if ($temp != "") {
 	//print "
 	//</tr>
 	//</table><br>";
-	print "</ul></li></ul>";
+	print '</ul></div></nav>';
 
-	print "<input type=\"button\" class=\"btn btn-success\" onclick=\"document.location.href='index.php?action=change_state'\" value=\"Change State\">";
+	print "<br><input type=\"button\" class=\"btn btn-success\" onclick=\"document.location.href='index.php?action=change_state'\" value=\"Change State\">";
 
 	if (($_GET['action'] == "") && ($_POST['action'] == "")) {
 	print "<hr>
