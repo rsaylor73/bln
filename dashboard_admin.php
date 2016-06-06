@@ -46,7 +46,7 @@ if ($temp != "") {
 	";
 
 	print '
-	<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+	<nav class="navbar navbar-default" style="background-color: #e3f2fd;">
   	<div class="container-fluid">
     <div class="navbar-header">
 	';
@@ -127,7 +127,7 @@ if ($temp != "") {
 	//</table><br>";
 	print '</ul></div></nav>';
 
-	print "<br><input type=\"button\" class=\"btn btn-success\" onclick=\"document.location.href='index.php?action=change_state'\" value=\"Change State\">";
+	print "<input type=\"button\" class=\"btn btn-success\" onclick=\"document.location.href='index.php?action=change_state'\" value=\"Change State\">";
 
 	if (($_GET['action'] == "") && ($_POST['action'] == "")) {
 	print "<hr>
