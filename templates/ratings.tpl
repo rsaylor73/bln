@@ -235,4 +235,15 @@
 </div>
 </form>
 
+{literal}
+<script>
+        function load_rt(myform) {
+                $.get('load_rt.php',
+                $(myform).serialize(),
+                function(php_msg) {
+                        $("#ratings").html(php_msg);
+                });
+        }
+</script>
+{/literal}
 
