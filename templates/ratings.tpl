@@ -3,7 +3,7 @@
 <input type="hidden" name="ProjectID" value="{$ProjectID}">
 <input type="hidden" name="id" value="{$ID}">
 
-<div id="raitings">
+<div id="ratings">
 
 <br>
 
