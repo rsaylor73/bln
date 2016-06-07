@@ -49,7 +49,7 @@ if ($_SESSION['tab5_read'] == "checked") {
 	while ($row = $result->fetch_assoc()) {
 		$html .= "
 		<tr>
-			<td><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>&nbsp;&nbsp;$row[Description]</td>
+			<td><a href=\"index.php?action=ratings&ProjectID=$ProjectID&id=$row[id]\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></a>&nbsp;&nbsp;$row[Description]</td>
 			<td>$row[design_concept]</td>
 			<td>$row[controlling_criteria]</td>
 			<td>$row[computations_reports]</td>
@@ -61,6 +61,31 @@ if ($_SESSION['tab5_read'] == "checked") {
 		";
 	}
 	$smarty->assign('data',$html);
+
+	// load rating
+	if ($_GET['id'] != "") {
+		$sql = "
+		SELECT 
+			`s`.`Description`,
+			`r`.*
+
+		FROM
+			`ratings` r, `SubmittalTypes` s
+
+		WHERE
+			`r`.`SubmittalTypeID` = `s`.`id`
+			AND `r`.`ProjectID` = '$ProjectID'
+			AND `r`.`id` = '$_GET[id]'
+		";
+		$result = $admin->new_mysql($sql);
+		while ($row = $result->fetch_assoc()) {
+			foreach ($row as $key=>$value) {
+				$smarty->assign($key,$value);
+			}
+			$smarty->assign('Description','<option selected>$row[Description]</option>');
+		}
+	}
+
 	$smarty->display('ratings.tpl');
 
 } else {

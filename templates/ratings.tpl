@@ -19,7 +19,7 @@
 <table border=0 width=80%>
 <tr>
         <td width=200>Submittal Type:</td><td><select name="submission" style="width:200px">
-        {$tbd}
+        {$Description}
 
         </select></td>
 </tr>
