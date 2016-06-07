@@ -8,7 +8,7 @@
 {$msg}
 <table border=0 width=100%>
         <tr bgcolor="#000000">
-                <td width=200><font color="339900">Project Number</font></td><td><select name="load_project" onchange="load_rt(this.form)"><option value="">Select to Load</option>
+                <td width=200><font color="339900">Project Number</font></td><td><select name="load_project" onchange="load_bt(this.form)"><option value="">Select to Load</option>
                 {$ProjectList}</select></td>
         </tr>
 </table>
@@ -145,7 +145,7 @@
 
 {literal}
 <script>
-        function load_bd(myform) {
+        function load_bt(myform) {
                 $.get('load_bt.php',
                 $(myform).serialize(),
                 function(php_msg) {
