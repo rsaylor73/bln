@@ -24,17 +24,19 @@
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 1</b></td></tr>
 <tr bgcolor="#E3F2FD">
 	<td>The Index of Sheets on the Title Sheet is complete:</td>
-	<td><select name="q1a" id="q1a" required>{if $q1a ne ""}
+	<td><select name="q1a" id="q1a" required onchange="q1()">{if $q1a ne ""}
 	<option selected>{$q1a}</option>{elseif $q1a eq ""}<option value="">Select</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
 
 
 <script>
-var e = document.getElementById("q1a");
-var q1aV = e.options[e.selectedIndex].value;
-if (q1aV == "No") {
-	document.getElementById('Tq1b').style.display='table-row';
-} else {
-	document.getElementById('Tq1b').style.display='none';
+function q1() {
+	var e = document.getElementById("q1a");
+	var q1aV = e.options[e.selectedIndex].value;
+	if (q1aV == "No") {
+		document.getElementById('Tq1b').style.display='table-row';
+	} else {
+		document.getElementById('Tq1b').style.display='none';
+	}
 }
 </script>
 
