@@ -35,6 +35,7 @@ Version 2.0
 
 
 
+	$smarty->assign('showform','yes');
 	$smarty->display('bidability.tpl');
 
 //} else {
