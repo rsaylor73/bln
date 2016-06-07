@@ -1,7 +1,7 @@
 <form name="myform" action="index.php" method="post">
 <input type="hidden" name="action" value="ratings">
 <input type="hidden" name="ProjectID" value="{$ProjectID}">
-<input type="hidden" name="id" value="{$ID}">
+<input type="hidden" name="id" value="{$id}">
 
 <div id="ratings">
 
@@ -213,6 +213,10 @@
 <tr><td colspan=2><a href="javascript:void(0)" onclick="document.getElementById('part7').style.display='none'">Close</a><br><hr></td></tr>
 </table>
 </td></tr>
+
+{if $id ne ""}
+<tr><td colspan=2><input type="submit" value="Update" class="btn btn-primary"></td>td></tr>tr>
+{/if}
 
 
 </table>

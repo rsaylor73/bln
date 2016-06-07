@@ -82,7 +82,7 @@ if ($_SESSION['tab5_read'] == "checked") {
 			foreach ($row as $key=>$value) {
 				$smarty->assign($key,$value);
 			}
-			$smarty->assign('Description','<option selected>$row[Description]</option>');
+			$smarty->assign('Description',"<option selected>$row[Description]</option>");
 		}
 	}
 
