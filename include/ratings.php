@@ -32,8 +32,35 @@ if ($_SESSION['tab5_read'] == "checked") {
 	}
 	$smarty->assign('ProjectID',$ProjectID);
 
+	// load data
+	$sql = "
+	SELECT 
+		`s`.`Description`,
+		`r`.*
 
+	FROM
+		`ratings` r, `SubmittalTypes` s
 
+	WHERE
+		`r`.`SubmittalTypeID` = `s`.`id`
+		AND `r`.`ProjectID` = '$ProjectID'
+	";
+	$result = $admin->new_mysql($sql);
+	while ($row = $result->fetch_assoc()) {
+		$html .= "
+		<tr>
+			<td>$row[Description]</td>
+			<td>$row[design_concept]</td>
+			<td>$row[controlling_criteria]</td>
+			<td>$row[computations_reports]</td>
+			<td>$row[plans_quality]</td>
+			<td>$row[engineering_judgement]</td>
+			<td>$row[documentation]</td>
+			<td>$row[qa]</td>
+		</tr>
+		";
+	}
+	$smarty->assign('data',$html);
 	$smarty->display('ratings.tpl');
 
 } else {
