@@ -59,7 +59,7 @@ if ($check_login == "TRUE") {
 
 	// Tab 7
 	if (($_GET['action'] == "Bidability") OR ($_POST['action'] == "Bidability")) {
-		include "include/Bidability.php";
+		include "include/bidability.php";
 	}
 
         if ($_GET['action'] == "profile") {
