@@ -73,6 +73,9 @@ if ($temp != "") {
 	if (($_GET['action'] == "constructability") or ($_POST['action'] == "constructability")) {
 		$t6 = "class=\"active\"";
 	}
+	if (($_GET['action'] == "Bidability") or ($_POST['action'] == "Bidability")) {
+		$t7 = "class=\"active\"";
+	}
 
 	$result2 = $this->new_mysql($sql2);
 	while ($row2 = $result2->fetch_assoc()) {
@@ -116,7 +119,7 @@ if ($temp != "") {
 		//print "<td width=20%><b><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></b></td>";
 		print "<li $t6><a href=\"index.php?action=constructability&ProjectID=$_SESSION[ProjectID]\">Constructability</a></li>";
 		//print "<td width=20%><b>Tab 7 TBD</b></td>";
-		print "<li $t7><a href=\"#\">Tab 7 TBD</a></li>";
+		print "<li $t7><a href=\"index.php?action=Bidability&ProjectID=$_SESSION[ProjectID]\">Bidability</a></li>";
 
 	} else {
 		//print "<td colspan=6>You currently do not have a default state set. Please click <a href=\"index.php?action=change_state\">here</a> to set a state.</td>";
