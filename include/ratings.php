@@ -32,6 +32,27 @@ if ($_SESSION['tab5_read'] == "checked") {
 	}
 	$smarty->assign('ProjectID',$ProjectID);
 
+	// save rating
+	if ($_POST['id'] != "") {
+		$sql = "UPDATE `ratings` SET 
+		`design_concept` = '$_POST[design_concept]',
+		`controlling_criteria` = '$_POST[controlling_criteria]',
+		`computations_reports` = '$_POST[computations_reports]',
+		`plans_quality` = '$_POST[plans_quality]',
+		`engineering_judgement` = '$_POST[engineering_judgement]',
+		`documentation` = '$_POST[documentation]',
+		`qa` = '$_POST[qa]'
+
+		WHERE `id` = '$_POST[id]' AND `ProjectID` = '$ProjectID'
+		";
+		$result = $admin->new_mysql($sql);
+		if ($result == "TRUE") {
+			$smarty->assign('msg','<div class="alert alert-success" role="alert"><strong>Success</strong> The record was updated.</div>');
+		} else {
+			$smarty->assign('msg','<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> There was a MySQL error!</div>');
+		}
+	}
+
 	// load data
 	$sql = "
 	SELECT 
