@@ -118,11 +118,13 @@ Version 2.0
 		$sql = "SELECT * FROM `Bidability` WHERE `ProjectID` = '$ProjectID'";
 		$result = $admin->new_mysql($sql);
 		while ($row = $result->fetch_assoc()) {
-			foreach ($row as $key=>$value) {
-				$smarty->assign($key,$value);
-			}
+			$smarty->assign('q1a',"<option selected>$row[q1a]</option>");
+
 		}
 	}
+
+	// test
+	$smarty->assign('q1a',"<option selected>No</option>");
 
 
 	$smarty->display('bidability.tpl');
