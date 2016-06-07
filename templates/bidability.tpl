@@ -17,7 +17,7 @@
 
 <div id="Bidability" {if $showform ne 'yes'}style="display:none"{/if}>
 
-
+{$msg}
 <table class="table">
 
 <!-- q1 -->
