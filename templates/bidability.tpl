@@ -3,7 +3,6 @@
 <input type="hidden" name="ProjectID" value="{$ProjectID}">
 <input type="hidden" name="id" value="{$id}">
 
-<div id="Bidability">
 
 <br>
 {$msg}
@@ -15,6 +14,9 @@
 </table>
 
 <br>
+
+<div id="Bidability" {if $showform ne 'yes'}style="display:none"{/if}>
+
 
 <table class="table">
 
