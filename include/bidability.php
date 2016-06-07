@@ -34,8 +34,9 @@ Version 2.0
 	$smarty->assign('ProjectID',$ProjectID);
 
 
-
-	$smarty->assign('showform','yes');
+	if ($ProjectID != "") {
+		$smarty->assign('showform','yes');
+	}
 	$smarty->display('bidability.tpl');
 
 //} else {

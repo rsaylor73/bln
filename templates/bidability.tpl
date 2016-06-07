@@ -142,3 +142,15 @@
 
 </div>
 </form>
+
+{literal}
+<script>
+        function load_bd(myform) {
+                $.get('load_bt.php',
+                $(myform).serialize(),
+                function(php_msg) {
+                        $("#Bidability").html(php_msg);
+                });
+        }
+</script>
+{/literal}
