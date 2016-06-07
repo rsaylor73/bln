@@ -72,6 +72,53 @@
 <tr bgcolor="#E3F2FD">
 	<td># of required Pay Items in the Standard Specifications which are not included in the SOQ:</td><td><input type="text" name="q7d" value="{$q7d}" size="20"></td></tr>
 
+<!-- q8 -->
+<tr><td>Items in the SOQ are consistent with Payment sections of the specifications in Title and Unit of Measure:</td>
+	<td><select name="q8a">{if $q8a ne ""}<option selected>{$q8a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+<tr><td># of Items in SOQ which are not consistent with Payment sections of the specifications in Title and Unit of Measure:</td><td><input type="text" name="q8b" value="{$q8b}" size="20"></td></tr>
+
+<!-- q9 -->
+<tr bgcolor="#E3F2FD">
+	<td>Items in the SOQ are consistent with current Bid Item List in Number, Title and Unit of Measure:</td>
+	<td><select name="q9a">{if $q9a ne ""}<option selected>{$q9a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+<tr bgcolor="#E3F2FD">
+	<td># of Items in the SOQ which are not consistent with current Bid Item List in Number, Title or Unit of Measure:</td><td><input type="text" name="q9b" value="{$q9b}" size="20"></td></tr>
+
+<!-- q10 -->
+<tr><td>Quantities appear reasonable for the size and scope of the project:</td>
+	<td><select name="q10a">{if $q10a ne ""}<option selected>{$q10a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+<tr><td># of qunatities which do not apear reasonable for the size and scope of the project:</td><td><input type="text" name="q10b" value="{$q10b}" size="20"></td></tr>
+
+<!-- q11 -->
+<tr bgcolor="#E3F2FD"><td>All Project Special Provisions have the necessary measurement and payment clauses:</td>
+	<td><select name="q11a">{if $q11a ne ""}<option selected>{$q11a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+<tr bgcolor="#E3F2FD"><td># of Project Special Provisions missing measurement and payment cluases:</td><td><input type="text" name="q11b" value="{$q11b}" size="20"></td></tr>
+
+<!-- q12 -->
+<tr><td>The most current revisions of CDOT's Standard Special Provisions are included:</td>
+	<td><select name="q12a">{if $q12a ne ""}<option selected>{$q12a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+
+<!-- q13 -->
+<tr bgcolor="#E3F2FD"><td>The limits of construction and the limits of demolition are shown and noted on the plan sheets:</td>
+	<td><select name="q13a">{if $q13a ne ""}<option selected>{$q13a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+
+<!-- q14 -->
+<tr><td>Required permits are listed in the Project Special Provisions (e.g., SWPP, 404, NPDES, Dewatering):</td>
+	<td><select name="q14a">{if $q14a ne ""}<option selected>{$q14a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+
+<!-- q15 -->
+<tr bgcolor="#E3F2FD"><td>A list of utility owners and contact numbers is included in the Project Special Provisions for the utilities shown on the plan sheets:</td>
+	<td><select name="q15a">{if $q15a ne ""}<option selected>{$q15a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+
+<!-- q16 -->
+<tr><td>The log of test borings is included, if applicable:</td>
+	<td><select name="q16a">{if $q16a ne ""}<option selected>{$q16a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+
+<!-- q17 -->
+<tr bgcolor="#E3F2FD"><td>Prepared reports for the project are listed in the Project Special Provisions (e.g. Geotechnical, Drainage, Environmental)</td>
+	<td><select name="q17a">{if $q17a ne ""}<option selected>{$q17a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+
+
 </table>
 
 </div>
