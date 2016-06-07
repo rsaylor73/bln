@@ -57,6 +57,11 @@ if ($check_login == "TRUE") {
 		include "include/constructability.php";
 	}
 
+	// Tab 7
+	if (($_GET['action'] == "Bidability") OR ($_POST['action'] == "Bidability")) {
+		include "include/Bidability.php";
+	}
+
         if ($_GET['action'] == "profile") {
                 $admin->profile();
         }
