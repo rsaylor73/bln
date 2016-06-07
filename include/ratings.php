@@ -49,7 +49,7 @@ if ($_SESSION['tab5_read'] == "checked") {
 	while ($row = $result->fetch_assoc()) {
 		$html .= "
 		<tr>
-			<td>$row[Description]</td>
+			<td><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>&nbsp;&nbsp;$row[Description]</td>
 			<td>$row[design_concept]</td>
 			<td>$row[controlling_criteria]</td>
 			<td>$row[computations_reports]</td>
