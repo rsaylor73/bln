@@ -393,8 +393,10 @@ if (test2 == "<option selected>No</option>") {
 	{if $q17a ne ""}{$q17a}{elseif $q17a eq ""}{$default}{/if}
 	<option>Yes</option><option>No</option></select></td></tr>
 
-</table>
+<tr><td colspan=2><input type="submit" value="Save" class="btn btn-primary"></td></tr>
 
+</table>
+<br><Br>
 </div>
 </form>
 
