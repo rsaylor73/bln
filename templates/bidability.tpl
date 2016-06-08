@@ -35,8 +35,8 @@
 <script>
 function q1() {
 	var e = document.getElementById("q1a");
-	var q1aV = e.options[e.selectedIndex].value;
-	if (q1aV == "No") {
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
 		document.getElementById('Tq1b').style.display='table-row';
 		document.getElementById('Tq1c').style.display='table-row';
 	} else {
@@ -44,8 +44,8 @@ function q1() {
 		document.getElementById('Tq1c').style.display='none';
 	}
 }
-var test = "{$q1a}";
-if (test == "<option selected>No</option>") {
+var test2 = "{$q1a}";
+if (test2 == "<option selected>No</option>") {
 	document.getElementById('Tq1b').style.display='table-row';
 	document.getElementById('Tq1c').style.display='table-row';
 }
@@ -58,8 +58,27 @@ if (test == "<option selected>No</option>") {
 	{if $q2a ne ""}{$q2a}{elseif $q2a eq ""}{$default}{/if}
 
 	<option>Yes</option><option>No</option></select></td></tr>
-<tr><td># of Notes in conflict with Specifications:</td><td><input type="text" name="q2b" value="{$q2b}" size="20"></td></tr>
-<tr><td># of Notes in conflict with Special Provisions:</td><td><input type="text" name="q2c" value="{$q2c}" size="20"></td></tr>
+<tr style="display:none" id="Tq2b"><td># of Notes in conflict with Specifications:</td><td><input type="text" name="q2b" value="{$q2b}" size="20"></td></tr>
+<tr style="display:none" id="Tq2c"><td># of Notes in conflict with Special Provisions:</td><td><input type="text" name="q2c" value="{$q2c}" size="20"></td></tr>
+
+<script>
+function q2() {
+	var e = document.getElementById("q2a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq2b').style.display='table-row';
+		document.getElementById('Tq2c').style.display='table-row';
+	} else {
+		document.getElementById('Tq2b').style.display='none';
+		document.getElementById('Tq2c').style.display='none';
+	}
+}
+var test2 = "{$q2a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq2b').style.display='table-row';
+	document.getElementById('Tq2c').style.display='table-row';
+}
+</script>
 
 <!-- q3 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 3</b></td></tr>
