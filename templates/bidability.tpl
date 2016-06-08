@@ -5,7 +5,6 @@
 
 
 <br>
-{$msg}
 <table border=0 width=100%>
         <tr bgcolor="#000000">
                 <td width=200><font color="339900">Project Number</font></td><td><select name="load_project" onchange="load_bt(this.form)"><option value="">Select to Load</option>
