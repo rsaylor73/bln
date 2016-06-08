@@ -38,20 +38,26 @@ function q1() {
 	var q1aV = e.options[e.selectedIndex].value;
 	if (q1aV == "No") {
 		document.getElementById('Tq1b').style.display='table-row';
+		document.getElementById('Tq1c').style.display='table-row';
 	} else {
 		document.getElementById('Tq1b').style.display='none';
+		document.getElementById('Tq1c').style.display='none';
 	}
 }
 var test = "{$q1a}";
 if (test == "<option selected>No</option>") {
 	document.getElementById('Tq1b').style.display='table-row';
+	document.getElementById('Tq1c').style.display='table-row';
 }
 </script>
 
 <!-- q2 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 2</b></td></tr>
 <tr><td>Plan Notes are consistent with Specifications and Special Provisions:</td>
-	<td><select name="q2a">{if $q2a ne ""}<option selected>{$q2a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+	<td><select name="q2a" required onchange="q2()">
+	{if $q2a ne ""}{$q2a}{elseif $q2a eq ""}{$default}{/if}
+
+	<option>Yes</option><option>No</option></select></td></tr>
 <tr><td># of Notes in conflict with Specifications:</td><td><input type="text" name="q2b" value="{$q2b}" size="20"></td></tr>
 <tr><td># of Notes in conflict with Special Provisions:</td><td><input type="text" name="q2c" value="{$q2c}" size="20"></td></tr>
 
