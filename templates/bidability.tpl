@@ -26,10 +26,10 @@
 	<td>The Index of Sheets on the Title Sheet is complete:</td>
 	<td><select name="q1a" id="q1a" required onchange="q1()">{if $q1a ne ""}
 	<option selected>{$q1a}</option>{elseif $q1a eq ""}<option value="">Select</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-
+<tr style="display:none" id="Tq1b" bgcolor="#E3F2FD"><td># of sheets missing from Index of Sheets:</td><td><input type="text" name="q1b" value="{$q1b}" size="20"></td></tr>
+<tr style="display:none" id="Tq1c" bgcolor="#E3F2FD"><td>Total # of sheets in plan set:</td><td><input type="text" name="q1c" value="{$q1c}" size="20"></td></tr>
 
 <script>
-
 function q1() {
 	var e = document.getElementById("q1a");
 	var q1aV = e.options[e.selectedIndex].value;
@@ -39,13 +39,6 @@ function q1() {
 		document.getElementById('Tq1b').style.display='none';
 	}
 }
-
-</script>
-
-<tr style="display:none" id="Tq1b" bgcolor="#E3F2FD"><td># of sheets missing from Index of Sheets:</td><td><input type="text" name="q1b" value="{$q1b}" size="20"></td></tr>
-<tr style="display:none" id="Tq1c" bgcolor="#E3F2FD"><td>Total # of sheets in plan set:</td><td><input type="text" name="q1c" value="{$q1c}" size="20"></td></tr>
-
-<script>
 var test = "{$q1a}";
 if (test == "<option selected>No</option>") {
 	document.getElementById('Tq1b').style.display='table-row';

@@ -119,6 +119,9 @@ Version 2.0
 		$result = $admin->new_mysql($sql);
 		while ($row = $result->fetch_assoc()) {
 			$smarty->assign('q1a',"<option selected>$row[q1a]</option>");
+			$smarty->assign('q1b',"<option selected>$row[q1b]</option>");
+			$smarty->assign('q1c',"$row[q1c]");
+			
 
 		}
 	}
