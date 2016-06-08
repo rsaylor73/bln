@@ -253,28 +253,103 @@ if (test2 == "<option selected>No</option>") {
 <!-- q8 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 8</b></td></tr>
 <tr><td>Items in the SOQ are consistent with Payment sections of the specifications in Title and Unit of Measure:</td>
-	<td><select name="q8a">{if $q8a ne ""}<option selected>{$q8a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr><td># of Items in SOQ which are not consistent with Payment sections of the specifications in Title and Unit of Measure:</td><td><input type="text" name="q8b" value="{$q8b}" size="20"></td></tr>
+	<td><select name="q8a" id="q8a" required onchange="q8()">
+	{if $q8a ne ""}{$q8a}{elseif $q8a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+
+<tr style="display:none" id="Tq8b"><td># of Items in SOQ which are not consistent with Payment sections of the specifications in Title and Unit of Measure:</td><td><input type="text" name="q8b" value="{$q8b}" size="20"></td></tr>
+
+<script>
+function q8() {
+	var e = document.getElementById("q8a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq8b').style.display='table-row';
+	} else {
+		document.getElementById('Tq8b').style.display='none';
+	}
+}
+var test2 = "{$q8a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq8b').style.display='table-row';
+}
+</script>
 
 <!-- q9 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 9</b></td></tr>
 <tr bgcolor="#E3F2FD">
 	<td>Items in the SOQ are consistent with current Bid Item List in Number, Title and Unit of Measure:</td>
-	<td><select name="q9a">{if $q9a ne ""}<option selected>{$q9a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr bgcolor="#E3F2FD">
-	<td># of Items in the SOQ which are not consistent with current Bid Item List in Number, Title or Unit of Measure:</td><td><input type="text" name="q9b" value="{$q9b}" size="20"></td></tr>
+	<td><select name="q9a" id="q9a" required onchange="q9()">
+	{if $q9a ne ""}{$q9a}{elseif $q9a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+
+<tr style="display:none" id="Tq9b"><td># of Items in the SOQ which are not consistent with current Bid Item List in Number, Title or Unit of Measure:</td><td><input type="text" name="q9b" value="{$q9b}" size="20"></td></tr>
+
+<script>
+function q9() {
+	var e = document.getElementById("q9a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq9b').style.display='table-row';
+	} else {
+		document.getElementById('Tq9b').style.display='none';
+	}
+}
+var test2 = "{$q9a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq9b').style.display='table-row';
+}
+</script>
 
 <!-- q10 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 10</b></td></tr>
 <tr><td>Quantities appear reasonable for the size and scope of the project:</td>
-	<td><select name="q10a">{if $q10a ne ""}<option selected>{$q10a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr><td># of qunatities which do not apear reasonable for the size and scope of the project:</td><td><input type="text" name="q10b" value="{$q10b}" size="20"></td></tr>
+	<td><select name="q10a" id="q10a" required onchange="q10()">
+	{if $q9a ne ""}{$q9a}{elseif $q9a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+
+<tr style="display:none" id="Tq10b"><td># of qunatities which do not apear reasonable for the size and scope of the project:</td><td><input type="text" name="q10b" value="{$q10b}" size="20"></td></tr>
+
+<script>
+function q10() {
+	var e = document.getElementById("q10a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq10b').style.display='table-row';
+	} else {
+		document.getElementById('Tq10b').style.display='none';
+	}
+}
+var test2 = "{$q10a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq10b').style.display='table-row';
+}
+</script>
 
 <!-- q11 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 11</b></td></tr>
 <tr bgcolor="#E3F2FD"><td>All Project Special Provisions have the necessary measurement and payment clauses:</td>
-	<td><select name="q11a">{if $q11a ne ""}<option selected>{$q11a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr bgcolor="#E3F2FD"><td># of Project Special Provisions missing measurement and payment cluases:</td><td><input type="text" name="q11b" value="{$q11b}" size="20"></td></tr>
+	<td><select name="q11a" id="q11a" required onchange="q11()">
+	{if $q10a ne ""}{$q10a}{elseif $q10a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+
+<tr style="display:none" id="Tq10b" bgcolor="#E3F2FD"><td># of Project Special Provisions missing measurement and payment cluases:</td><td><input type="text" name="q11b" value="{$q11b}" size="20"></td></tr>
+
+<script>
+function q11() {
+	var e = document.getElementById("q11a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq11b').style.display='table-row';
+	} else {
+		document.getElementById('Tq11b').style.display='none';
+	}
+}
+var test2 = "{$q11a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq11b').style.display='table-row';
+}
+</script>
 
 <!-- q12 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 12</b></td></tr>
