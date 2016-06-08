@@ -50,6 +50,16 @@ if ($found == "1") {
                                 $_SESSION['tab5_read'] = $row2['read'];
                                 $_SESSION['tab5_write'] = $row2['write'];
 			break;
+
+			case "6":
+                                $_SESSION['tab6_read'] = $row2['read'];
+                                $_SESSION['tab6_write'] = $row2['write'];
+			break;
+
+			case "7":
+                                $_SESSION['tab7_read'] = $row2['read'];
+                                $_SESSION['tab7_write'] = $row2['write'];
+			break;
 		}
 	}
 

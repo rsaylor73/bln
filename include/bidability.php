@@ -6,14 +6,14 @@ Version 2.0
 
 */
 
-// TBA
+
 // check if you are allowed to write data
-//if ($_SESSION['tab5_write'] == "checked") {
-//        $write = "Yes";
-//}
+if ($_SESSION['tab7_write'] == "checked") {
+        $write = "Yes";
+}
 
 // check if you are allowed to read
-//if ($_SESSION['tab5_read'] == "checked") {
+if ($_SESSION['tab7_read'] == "checked") {
 	$_SESSION['bt'] = "Hlo0G432lth9dW3jck";
         // load projects
         $project_list = $admin->load_project();
@@ -39,6 +39,7 @@ Version 2.0
 	}
 
 	// insert data
+	if ($write == "Yes") {
 	if ($_POST['ProjectID'] != "") {
 		// test if insert or update
 		$found = "0";
@@ -109,9 +110,10 @@ Version 2.0
 		} else {
 			$smarty->assign('msg','<div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> There was a MySQL error!</div>');
 		}
-
-
 	}
+	}
+
+
 	$smarty->assign('default','<option value="">Select</option>');
 	// load data
 	if ($ProjectID != "") {
@@ -176,8 +178,8 @@ Version 2.0
 
 	$smarty->display('bidability.tpl');
 
-//} else {
-//        $smarty->assign('error','You do not have access to read this section');
-//        $smarty->display('general_error.tpl');
-//}
+} else {
+        $smarty->assign('error','You do not have access to read this section');
+        $smarty->display('general_error.tpl');
+}
 ?>

@@ -2,6 +2,12 @@
 
 // setup security TBD with tab 7
 
+// check if you are allowed to write data
+if ($_SESSION['tab6_write'] == "checked") {
+        $write = "Yes";
+}
+
+if ($_SESSION['tab6_read'] == "checked") {
 	// check data
 	if ($_GET['ProjectID'] != "") {
 		$ProjectID = $_GET['ProjectID'];
@@ -15,7 +21,8 @@
 	}
 
 	// update data
-	if ($_POST['sub'] == "update") {
+	if ($write == "Yes") {
+		if ($_POST['sub'] == "update") {
 	        $sql = "
         	SELECT
 	                `c`.`id`,
@@ -34,21 +41,21 @@
 
 	        ORDER BY `ct`.`id` ASC, `cc`.`id` ASC
         	";
-		$result = $admin->new_mysql($sql);
-		while ($row = $result->fetch_assoc()) {
-			$i = "answer_";
-			$i .= $row['id'];
-			$answer = $_POST[$i];
-			$sql2 = "UPDATE `Constructability` SET `answer` = '$answer' WHERE `projectID` = '$ProjectID' AND `id` = '$row[id]'";
-			$result2 = $admin->new_mysql($sql2);
+			$result = $admin->new_mysql($sql);
+			while ($row = $result->fetch_assoc()) {
+				$i = "answer_";
+				$i .= $row['id'];
+				$answer = $_POST[$i];
+				$sql2 = "UPDATE `Constructability` SET `answer` = '$answer' WHERE `projectID` = '$ProjectID' AND `id` = '$row[id]'";
+				$result2 = $admin->new_mysql($sql2);
+			}
 		}
-
 	}
 
 
 
-        $project_list = $admin->load_project();
-        $smarty->assign('ProjectList',$project_list);
+    $project_list = $admin->load_project();
+    $smarty->assign('ProjectList',$project_list);
 
 	$sql = "
 	SELECT
@@ -109,6 +116,9 @@
 	$smarty->assign('html',$html);
 
         $smarty->display('constructability.tpl');
-
+} else {
+        $smarty->assign('error','You do not have access to read this section');
+        $smarty->display('general_error.tpl');
+}
 
 ?>

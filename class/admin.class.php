@@ -759,6 +759,17 @@ class Admin {
                                         $read5 = $row2['read'];
                                         $write5 = $row2['write'];
                                         break;
+
+                                        case "6":
+                                        $read6 = $row2['read'];
+                                        $write6 = $row2['write'];
+                                        break;                                   
+
+                                        case "7":
+                                        $read7 = $row2['read'];
+                                        $write7 = $row2['write'];
+                                        break;
+
 				}
 			}
 
@@ -770,10 +781,15 @@ class Admin {
 			<table class=\"table\">
 			<tr><td><b>Tab</b></td><td>Read Access</td><td>Write Access</td></tr>
 			<tr><td>Project Entry</td><td><input type=\"checkbox\" name=\"read1\" 	$read1 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write1\" $write1 value=\"checked\"></td></tr>
-                        <tr><td>Milestones</td><td><input type=\"checkbox\" name=\"read2\"	$read2 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write2\" $write2 value=\"checked\"></td></tr>
-                        <tr><td>Contacts</td><td><input type=\"checkbox\" name=\"read3\" 	$read3 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write3\" $write3 value=\"checked\"></td></tr>
-                        <tr><td>Design Deficiencies</td><td><input type=\"checkbox\" name=\"read4\" $read4 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write4\" $write4 value=\"checked\"></td></tr>
-                        <tr><td>Ratings</td><td><input type=\"checkbox\" name=\"read5\" 	$read5 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write5\" $write5 value=\"checked\"></td></tr>
+			<tr><td>Milestones</td><td><input type=\"checkbox\" name=\"read2\"	$read2 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write2\" $write2 value=\"checked\"></td></tr>
+            <tr><td>Contacts</td><td><input type=\"checkbox\" name=\"read3\" 	$read3 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write3\" $write3 value=\"checked\"></td></tr>
+            <tr><td>Design Deficiencies</td><td><input type=\"checkbox\" name=\"read4\" $read4 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write4\" $write4 value=\"checked\"></td></tr>
+            <tr><td>Ratings</td><td><input type=\"checkbox\" name=\"read5\" 	$read5 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write5\" $write5 value=\"checked\"></td></tr>
+            <tr><td>Constructability</td><td><input type=\"checkbox\" name=\"read6\" 	$read6 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write6\" $write6 value=\"checked\"></td></tr>
+            <tr><td>Bidability</td><td><input type=\"checkbox\" name=\"read7\" 	$read7 value=\"checked\"></td><td><input type=\"checkbox\" name=\"write7\" $write7 value=\"checked\"></td></tr>
+			
+
+
 			<tr><td colspan=3><input type=\"submit\" class=\"btn btn-primary\" value=\"Update\"></td></tr>
 			</table>
 			</form>";
@@ -807,6 +823,14 @@ class Admin {
                         }
                         if ($_POST['read5'] != "") {
                                 $sql = "INSERT INTO `security_table` (`tab`,`userID`,`read`,`write`) VALUES ('5','$_POST[id]','$_POST[read5]','$_POST[write5]')";
+                                $result = $this->new_mysql($sql);
+                        }
+                        if ($_POST['read6'] != "") {
+                                $sql = "INSERT INTO `security_table` (`tab`,`userID`,`read`,`write`) VALUES ('6','$_POST[id]','$_POST[read6]','$_POST[write6]')";
+                                $result = $this->new_mysql($sql);
+                        }
+                        if ($_POST['read7'] != "") {
+                                $sql = "INSERT INTO `security_table` (`tab`,`userID`,`read`,`write`) VALUES ('7','$_POST[id]','$_POST[read7]','$_POST[write7]')";
                                 $result = $this->new_mysql($sql);
                         }
 
