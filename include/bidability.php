@@ -171,7 +171,7 @@ Version 2.0
 	}
 
 	// test
-	$smarty->assign('q1a',"<option selected>No</option>");
+	//$smarty->assign('q1a',"<option selected>No</option>");
 
 
 	$smarty->display('bidability.tpl');
