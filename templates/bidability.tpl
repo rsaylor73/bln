@@ -187,15 +187,68 @@ if (test2 == "<option selected>No</option>") {
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 7</b></td></tr>
 <tr bgcolor="#E3F2FD">
 	<td>Required Pay Items in the Standard Specifications are all Included in the SOQ:</td>
-	<td><select name="q7a">{if $q7a ne ""}<option selected>{$q7a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr bgcolor="#E3F2FD">
+	<td><select name="q7a" id="q7a" required onchange="q7_1()">
+	{if $q7a ne ""}{$q7a}{elseif $q7a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+
+<tr style="display:none" id="Tq7b" bgcolor="#E3F2FD">
 	<td>All required Pay Items in the Standard Specifications, not included in the SOQ, are Included In the Bid Item Description:</td>
-	<td><select name="q7b">{if $q7b ne ""}<option selected>{$q7b}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr bgcolor="#E3F2FD">
+	<td><select name="q7b" id="q7b" onchange="q7_2()">
+	{if $q7b ne ""}{$q7b}{elseif $q7b eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+
+<tr style="display:none" id="Tq7c" bgcolor="#E3F2FD">
 	<td>All required Pay Items in the Standard Specifications, not included in the SOQ or Bid Item Descriptions, are called out as Incidental to an included Item:</td>
-	<td><select name="q7c">{if $q7c ne ""}<option selected>{$q7c}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr bgcolor="#E3F2FD">
+	<td><select name="q7c" id="q7c" onchange="q7_3()">
+	{if $q7c ne ""}{$q7c}{elseif $q7c eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+
+<tr style="display:none" id="Tq7d" bgcolor="#E3F2FD">
 	<td># of required Pay Items in the Standard Specifications which are not included in the SOQ:</td><td><input type="text" name="q7d" value="{$q7d}" size="20"></td></tr>
+
+<script>
+function q7_1() {
+	var e = document.getElementById("q7a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq7b').style.display='table-row';
+	} else {
+		document.getElementById('Tq7b').style.display='none';
+	}
+}
+var test2 = "{$q7a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq7b').style.display='table-row';
+}
+
+function q7_2() {
+	var e = document.getElementById("q7b");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq7c').style.display='table-row';
+	} else {
+		document.getElementById('Tq7c').style.display='none';
+	}
+}
+var test2 = "{$q7b}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq7c').style.display='table-row';
+}
+
+function q7_3() {
+	var e = document.getElementById("q7c");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq7d').style.display='table-row';
+	} else {
+		document.getElementById('Tq7d').style.display='none';
+	}
+}
+var test2 = "{$q7c}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq7d').style.display='table-row';
+}
+</script>
 
 <!-- q8 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 8</b></td></tr>
