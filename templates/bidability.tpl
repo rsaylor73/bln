@@ -305,7 +305,7 @@ if (test2 == "<option selected>No</option>") {
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 10</b></td></tr>
 <tr><td>Quantities appear reasonable for the size and scope of the project:</td>
 	<td><select name="q10a" id="q10a" required onchange="q10()">
-	{if $q9a ne ""}{$q9a}{elseif $q9a eq ""}{$default}{/if}
+	{if $q10a ne ""}{$q10a}{elseif $q10a eq ""}{$default}{/if}
 	<option>Yes</option><option>No</option></select></td></tr>
 
 <tr style="display:none" id="Tq10b"><td># of qunatities which do not apear reasonable for the size and scope of the project:</td><td><input type="text" name="q10b" value="{$q10b}" size="20"></td></tr>
@@ -330,10 +330,10 @@ if (test2 == "<option selected>No</option>") {
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 11</b></td></tr>
 <tr bgcolor="#E3F2FD"><td>All Project Special Provisions have the necessary measurement and payment clauses:</td>
 	<td><select name="q11a" id="q11a" required onchange="q11()">
-	{if $q10a ne ""}{$q10a}{elseif $q10a eq ""}{$default}{/if}
+	{if $q11a ne ""}{$q11a}{elseif $q11a eq ""}{$default}{/if}
 	<option>Yes</option><option>No</option></select></td></tr>
 
-<tr style="display:none" id="Tq10b" bgcolor="#E3F2FD"><td># of Project Special Provisions missing measurement and payment cluases:</td><td><input type="text" name="q11b" value="{$q11b}" size="20"></td></tr>
+<tr style="display:none" id="Tq11b" bgcolor="#E3F2FD"><td># of Project Special Provisions missing measurement and payment cluases:</td><td><input type="text" name="q11b" value="{$q11b}" size="20"></td></tr>
 
 <script>
 function q11() {
@@ -354,33 +354,44 @@ if (test2 == "<option selected>No</option>") {
 <!-- q12 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 12</b></td></tr>
 <tr><td>The most current revisions of CDOT's Standard Special Provisions are included:</td>
-	<td><select name="q12a">{if $q12a ne ""}<option selected>{$q12a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+	<td><select name="q12a" id="q12a" required>
+	{if $q12a ne ""}{$q12a}{elseif $q12a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
 
 <!-- q13 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 13</b></td></tr>
 <tr bgcolor="#E3F2FD"><td>The limits of construction and the limits of demolition are shown and noted on the plan sheets:</td>
-	<td><select name="q13a">{if $q13a ne ""}<option selected>{$q13a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+	<td><select name="q13a" id="q13a" required>
+	{if $q13a ne ""}{$q13a}{elseif $q13a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
 
 <!-- q14 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 14</b></td></tr>
 <tr><td>Required permits are listed in the Project Special Provisions (e.g., SWPP, 404, NPDES, Dewatering):</td>
-	<td><select name="q14a">{if $q14a ne ""}<option selected>{$q14a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+	<td><select name="q14a" id="q14a" required>
+	{if $q14a ne ""}{$q14a}{elseif $q14a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
 
 <!-- q15 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 15</b></td></tr>
 <tr bgcolor="#E3F2FD"><td>A list of utility owners and contact numbers is included in the Project Special Provisions for the utilities shown on the plan sheets:</td>
-	<td><select name="q15a">{if $q15a ne ""}<option selected>{$q15a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+	<td><select name="q15a" id="q15a" required>
+	{if $q15a ne ""}{$q15a}{elseif $q15a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
 
 <!-- q16 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 16</b></td></tr>
 <tr><td>The log of test borings is included, if applicable:</td>
-	<td><select name="q16a">{if $q16a ne ""}<option selected>{$q16a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+	<td><select name="q16a" id="q16a" required>
+	{if $q16a ne ""}{$q16a}{elseif $q16a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
 
 <!-- q17 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 17</b></td></tr>
 <tr bgcolor="#E3F2FD"><td>Prepared reports for the project are listed in the Project Special Provisions (e.g. Geotechnical, Drainage, Environmental)</td>
-	<td><select name="q17a">{if $q17a ne ""}<option selected>{$q17a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-
+	<td><select name="q17a" id="q17a" required>
+	{if $q17a ne ""}{$q17a}{elseif $q17a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
 
 </table>
 
