@@ -84,18 +84,53 @@ if (test2 == "<option selected>No</option>") {
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 3</b></td></tr>
 <tr bgcolor="#E3F2FD">
 	<td>Quantities are correctly carried forward from Plan Sheets to individual tabulations:</td>
-	<td><select name="q3a">{if $q3a ne ""}<option selected>{$q3a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr bgcolor="#E3F2FD">
+	<td><select name="q3a" id="q3a" required onchange="q3()">
+	{if $q3a ne ""}{$q3a}{elseif $q3a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+<tr style="display:none" id="Tq3b" bgcolor="#E3F2FD">
 	<td># of times Quantities are not correctly carried forward from Plan Sheets to individual tabulations:</td><td><input type="text" name="q3b" value="{$q3b}" size="20"></td></tr>
 
+<script>
+function q3() {
+	var e = document.getElementById("q3a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq3b').style.display='table-row';
+	} else {
+		document.getElementById('Tq3b').style.display='none';
+	}
+}
+var test2 = "{$q3a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq3b').style.display='table-row';
+}
+</script>
 
 <!-- q4 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 4</b></td></tr>
 <tr>
 	<td>Estimated Quantities are correctly carried forward from General Notes to the Summary of Quantities (SOQ):</td>
-	<td><select name="q4a">{if $q4a ne ""}<option selected>{$q4a}</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
-<tr>
+	<td><select name="q4a" id="q4a" required onchange="q4()">
+	{if $q4a ne ""}{$q4a}{elseif $q4a eq ""}{$default}{/if}
+	<option>Yes</option><option>No</option></select></td></tr>
+<tr style="display:none" id="Tq4b">
 	<td># of estimated quantities not carried forward from General Notes to the SOQ:</td><td><input type="text" name="q4b" value="{$q4b}" size="20"></td></tr>
+
+<script>
+function q4() {
+	var e = document.getElementById("q4a");
+	var test1 = e.options[e.selectedIndex].value;
+	if (test1 == "No") {
+		document.getElementById('Tq4b').style.display='table-row';
+	} else {
+		document.getElementById('Tq4b').style.display='none';
+	}
+}
+var test2 = "{$q4a}";
+if (test2 == "<option selected>No</option>") {
+	document.getElementById('Tq4b').style.display='table-row';
+}
+</script>
 
 <!-- q5 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 5</b></td></tr>
