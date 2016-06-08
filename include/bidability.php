@@ -39,7 +39,7 @@ Version 2.0
 	}
 
 	// insert data
-	if ($_POST['id'] != "") {
+	if ($_POST['ProjectID'] != "") {
 		// test if insert or update
 		$found = "0";
 		$sql = "SELECT `id` FROM `Bidability` WHERE `id` = '$_POST[id]'";
