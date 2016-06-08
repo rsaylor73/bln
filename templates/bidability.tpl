@@ -24,8 +24,11 @@
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 1</b></td></tr>
 <tr bgcolor="#E3F2FD">
 	<td>The Index of Sheets on the Title Sheet is complete:</td>
-	<td><select name="q1a" id="q1a" required onchange="q1()">{if $q1a ne ""}
-	<option selected>{$q1a}</option>{elseif $q1a eq ""}<option value="">Select</option>{/if}<option>Yes</option><option>No</option></select></td></tr>
+	<td><select name="q1a" id="q1a" required onchange="q1()">
+
+	{if $q1a ne ""}{$q1a}{elseif $q1a eq ""}{$default}{/if}
+	
+	<option>Yes</option><option>No</option></select></td></tr>
 <tr style="display:none" id="Tq1b" bgcolor="#E3F2FD"><td># of sheets missing from Index of Sheets:</td><td><input type="text" name="q1b" value="{$q1b}" size="20"></td></tr>
 <tr style="display:none" id="Tq1c" bgcolor="#E3F2FD"><td>Total # of sheets in plan set:</td><td><input type="text" name="q1c" value="{$q1c}" size="20"></td></tr>
 

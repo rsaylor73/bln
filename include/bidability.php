@@ -112,7 +112,7 @@ Version 2.0
 
 
 	}
-
+	$smarty->assign('default','<option value="">Select</option>');
 	// load data
 	if ($ProjectID != "") {
 		$sql = "SELECT * FROM `Bidability` WHERE `ProjectID` = '$ProjectID'";
@@ -121,7 +121,7 @@ Version 2.0
 			$smarty->assign('q1a',"<option selected>$row[q1a]</option>");
 			$smarty->assign('q1b',"<option selected>$row[q1b]</option>");
 			$smarty->assign('q1c',"$row[q1c]");
-			
+
 
 		}
 	}
