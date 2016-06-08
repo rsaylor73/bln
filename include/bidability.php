@@ -119,9 +119,53 @@ Version 2.0
 		$result = $admin->new_mysql($sql);
 		while ($row = $result->fetch_assoc()) {
 			$smarty->assign('q1a',"<option selected>$row[q1a]</option>");
-			$smarty->assign('q1b',"<option selected>$row[q1b]</option>");
+			$smarty->assign('q1b',"$row[q1b]");
 			$smarty->assign('q1c',"$row[q1c]");
 
+			$smarty->assign('q2a',"<option selected>$row[q2a]</option>");
+			$smarty->assign('q2b',"$row[q2b]");
+			$smarty->assign('q2c',"$row[q2c]");
+
+			$smarty->assign('q3a',"<option selected>$row[q3a]</option>");
+			$smarty->assign('q3b',"$row[q3b]");
+
+			$smarty->assign('q4a',"<option selected>$row[q4a]</option>");
+			$smarty->assign('q4b',"$row[q4b]");
+
+			$smarty->assign('q5a',"<option selected>$row[q5a]</option>");
+			$smarty->assign('q5b',"$row[q5b]");
+
+			$smarty->assign('q6a',"<option selected>$row[q6a]</option>");
+			$smarty->assign('q6b',"$row[q6b]");
+
+			$smarty->assign('q7a',"<option selected>$row[q7a]</option>");
+			$smarty->assign('q7b',"<option selected>$row[q7b]</option>");
+			$smarty->assign('q7c',"<option selected>$row[q7c]</option>");
+			$smarty->assign('q7d',"$row[q7d]");
+
+			$smarty->assign('q8a',"<option selected>$row[q8a]</option>");
+			$smarty->assign('q8b',"$row[q8b]");
+
+			$smarty->assign('q9a',"<option selected>$row[q9a]</option>");
+			$smarty->assign('q9b',"$row[q9b]");
+
+			$smarty->assign('q10a',"<option selected>$row[q10a]</option>");
+			$smarty->assign('q10b',"$row[q10b]");
+
+			$smarty->assign('q11a',"<option selected>$row[q11a]</option>");
+			$smarty->assign('q11b',"$row[q11b]");
+
+			$smarty->assign('q12a',"<option selected>$row[q12a]</option>");
+
+			$smarty->assign('q13a',"<option selected>$row[q13a]</option>");
+
+			$smarty->assign('q14a',"<option selected>$row[q14a]</option>");
+
+			$smarty->assign('q15a',"<option selected>$row[q15a]</option>");
+
+			$smarty->assign('q16a',"<option selected>$row[q16a]</option>");
+
+			$smarty->assign('q17a',"<option selected>$row[q17a]</option>");
 
 		}
 	}
