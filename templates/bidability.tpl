@@ -54,7 +54,7 @@ if (test2 == "<option selected>No</option>") {
 <!-- q2 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 2</b></td></tr>
 <tr><td>Plan Notes are consistent with Specifications and Special Provisions:</td>
-	<td><select name="q2a" required onchange="q2()">
+	<td><select name="q2a" id="q2a" required onchange="q2()">
 	{if $q2a ne ""}{$q2a}{elseif $q2a eq ""}{$default}{/if}
 
 	<option>Yes</option><option>No</option></select></td></tr>
