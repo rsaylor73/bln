@@ -39,14 +39,18 @@ function q1() {
 		document.getElementById('Tq1b').style.display='none';
 	}
 }
+
+</script>
+
+<tr style="display:none" id="Tq1b" bgcolor="#E3F2FD"><td># of sheets missing from Index of Sheets:</td><td><input type="text" name="q1b" value="{$q1b}" size="20"></td></tr>
+<tr style="display:none" id="Tq1c" bgcolor="#E3F2FD"><td>Total # of sheets in plan set:</td><td><input type="text" name="q1c" value="{$q1c}" size="20"></td></tr>
+
+<script>
 var test = "{$q1a}";
 if (test == "<option selected>No</option>") {
 	document.getElementById('Tq1b').style.display='table-row';
 }
 </script>
-
-<tr style="display:none" id="Tq1b" bgcolor="#E3F2FD"><td># of sheets missing from Index of Sheets:</td><td><input type="text" name="q1b" value="{$q1b}" size="20"></td></tr>
-<tr style="display:none" id="Tq1c" bgcolor="#E3F2FD"><td>Total # of sheets in plan set:</td><td><input type="text" name="q1c" value="{$q1c}" size="20"></td></tr>
 
 <!-- q2 -->
 <tr bgcolor="#BFC8D4"><td colspan="2"><b>Question 2</b></td></tr>
