@@ -834,7 +834,7 @@ class Admin {
                                 $result = $this->new_mysql($sql);
                         }
 
-                                print "<font color=green>The security settings was updated.</font>";
+                                print "<br><br><font color=green>The security settings was updated.</font>";
                                 $this->manage_users();
 
                   } else {
